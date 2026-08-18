@@ -9,7 +9,10 @@ const map = L.map("map").setView(
 );
 
 
-// OpenStreetMap
+// ==========================================
+// OPENSTREETMAP
+// ==========================================
+
 L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
@@ -20,7 +23,7 @@ L.tileLayer(
 
 
 // ==========================================
-// CUSTOM SPOTTING MARKER FUNCTION
+// CUSTOM SPOTTING MARKER
 // ==========================================
 
 function createSpotMarker(
@@ -184,7 +187,7 @@ createSpotMarker(
 
 
 // ==========================================
-// SPOT 4
+// SPOT 4 - HNK KONAVLJANIN
 // ==========================================
 
 createSpotMarker(
@@ -326,14 +329,14 @@ L.marker(
 
 
 // ==========================================
-// RUNWAY
+// CORRECTED RUNWAY 11/29
 // ==========================================
 
 const runway = L.polyline(
 
     [
-        [42.5685, 18.2485],
-        [42.5550, 18.2840]
+        [42.569572, 18.247528],  // RWY 11
+        [42.555820, 18.282192]   // RWY 29
     ],
 
     {
@@ -393,6 +396,7 @@ const runwayIcon = L.divIcon({
                 font-weight:bold;
                 font-size:14px;
                 text-align:center;
+                line-height:16px;
             ">
                 11
                 <br>
@@ -411,7 +415,7 @@ const runwayIcon = L.divIcon({
 
 
 L.marker(
-    [42.5627, 18.2660],
+    [42.5627, 18.2658],
     { icon: runwayIcon }
 )
 .addTo(map)
