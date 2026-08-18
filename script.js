@@ -1,203 +1,171 @@
-// ==========================================
-// DUBROVNIK PLANESPOTTING - LDDU
-// Spotting positions
-// ==========================================
+* {
+    box-sizing: border-box;
+}
 
-const map = L.map("map").setView([42.5680, 18.2600], 14);
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #101820;
+    color: white;
+}
 
+header {
+    text-align: center;
+    padding: 25px;
+    background: #162431;
+}
 
-// OpenStreetMap
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
 
+header p {
+    margin: 0;
+    color: #b9c7d3;
+}
 
-// ==========================================
-// AIRPORT
-// ==========================================
-
-L.marker([42.5624, 18.2660])
-    .addTo(map)
-    .bindPopup(`
-        <h3>✈️ Dubrovnik Airport</h3>
-        <b>LDDU / DBV</b>
-        <p>Dubrovnik Ruđer Bošković Airport</p>
-        <p><b>Runway:</b> 11/29</p>
-    `);
-
-
-// ==========================================
-// SPOTTING POSITION 1
-// ==========================================
-
-L.marker([42.57024915946364, 18.245391561326596])
-    .addTo(map)
-    .bindPopup(`
-        <h3>🟢 Spotting Position 1</h3>
-
-        <p>
-            ✈️ Aircraft can be seen just seconds
-            before touchdown.
-        </p>
-
-        <p>
-            📍 42.570249, 18.245392
-        </p>
-
-        <p>
-            📸 Excellent position for close-up
-            landing photographs.
-        </p>
-    `);
+#map {
+    width: 100%;
+    height: 650px;
+}
 
 
-// ==========================================
-// SPOTTING POSITION 2
-// ==========================================
+/* ==========================================
+   POPUP DESIGN
+   ========================================== */
 
-L.marker([42.56441239157695, 18.253351872913807])
-    .addTo(map)
-    .bindPopup(`
-        <h3>🔵 Spotting Position 2</h3>
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: #101820;
+    color: white;
+}
 
-        <p>
-            ⭐ Very good spotting position.
-        </p>
+.leaflet-popup-content {
+    margin: 15px;
+    line-height: 1.5;
+    min-width: 230px;
+}
 
-        <p>
-            ✈️ You can see aircraft throughout
-            their movement around the airport.
-        </p>
+.leaflet-popup-content h3 {
+    margin: 0 0 10px;
+    font-size: 19px;
+}
 
-        <p>
-            📍 42.564412, 18.253352
-        </p>
-
-        <p>
-            📸 Great all-around location for
-            plane spotting.
-        </p>
-    `);
+.leaflet-popup-content p {
+    margin: 7px 0;
+    color: #e5e7eb;
+}
 
 
-// ==========================================
-// SPOTTING POSITION 3
-// ==========================================
+/* ==========================================
+   DIFFERENT SPOT COLORS
+   ========================================== */
 
-L.marker([42.5573083097695, 18.27213111634963])
-    .addTo(map)
-    .bindPopup(`
-        <h3>🟠 Spotting Position 3</h3>
+.spot1-popup h3 {
+    color: #39d353;
+}
 
-        <p>
-            🧱 If you climb on the wall, you can
-            see aircraft on the taxiway and the
-            entire General Aviation apron.
-        </p>
+.spot1-popup strong {
+    color: #39d353;
+}
 
-        <p>
-            ✈️ Aircraft vacating via taxiway E
-            can also be photographed very well.
-        </p>
+.spot2-popup h3 {
+    color: #3399ff;
+}
 
-        <p>
-            📸 Excellent position for unique
-            taxiing and vacating shots.
-        </p>
+.spot2-popup strong {
+    color: #3399ff;
+}
 
-        <p>
-            📍 42.557308, 18.272131
-        </p>
-    `);
+.spot3-popup h3 {
+    color: #ff9d00;
+}
 
+.spot3-popup strong {
+    color: #ff9d00;
+}
 
-// ==========================================
-// SPOTTING POSITION 4
-// HNK KONAVLJANIN
-// ==========================================
+.spot4-popup h3 {
+    color: #ff4444;
+}
 
-L.marker([42.5544013524664, 18.282621230913833])
-    .addTo(map)
-    .bindPopup(`
-        <h3>🔴 HNK Konavljanin</h3>
+.spot4-popup strong {
+    color: #ff4444;
+}
 
-        <p>
-            ⚽ HNK Konavljanin
-        </p>
+.spot5-popup h3 {
+    color: #c04cff;
+}
 
-        <p>
-            ✈️ Very good spotting location when
-            <b>RWY 29</b> is in use.
-        </p>
-
-        <p>
-            📸 Excellent for aircraft on approach
-            to runway 29.
-        </p>
-
-        <p>
-            📍 42.554401, 18.282621
-        </p>
-    `);
+.spot5-popup strong {
+    color: #c04cff;
+}
 
 
-// ==========================================
-// SPOTTING POSITION 5
-// HILL
-// ==========================================
+/* ==========================================
+   RUNWAY POPUP
+   ========================================== */
 
-L.marker([42.588411734070775, 18.246839539179884])
-    .addTo(map)
-    .bindPopup(`
-        <h3>🟣 Hill Spot</h3>
+.runway-popup h3 {
+    color: #ff3b3b;
+}
 
-        <p>
-            🏔️ Located on the hill overlooking
-            Dubrovnik Airport.
-        </p>
-
-        <p>
-            ✈️ Aircraft are further away, but you
-            can see the <b>entire airport</b>.
-        </p>
-
-        <p>
-            🌆 You can also see
-            <b>Dubrovnik Old Town</b>.
-        </p>
-
-        <p>
-            📸 Excellent for wide shots and
-            aircraft + airport + Dubrovnik scenery.
-        </p>
-
-        <p>
-            📍 42.588412, 18.246840
-        </p>
-    `);
+.runway-popup strong {
+    color: #ffcc00;
+}
 
 
-// ==========================================
-// LEGEND
-// ==========================================
+/* ==========================================
+   RUNWAY MARKER
+   ========================================== */
 
-const legend = L.control({ position: "bottomright" });
+.runway-marker {
+    width: 48px;
+    height: 48px;
+    background: #171717;
+    border: 3px solid #ff3333;
+    border-radius: 8px;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
 
-legend.onAdd = function () {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    const div = L.DomUtil.create("div", "map-legend");
+.runway-marker-inner {
+    transform: rotate(-45deg);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.1;
+}
 
-    div.innerHTML = `
-        <h4>📍 LDDU Spotting</h4>
+.runway-marker-inner span {
+    display: block;
+    font-size: 11px;
+    color: #ff3333;
+}
 
-        <div>🟢 Spot 1 - Seconds before touchdown</div>
-        <div>🔵 Spot 2 - Aircraft visible all the time</div>
-        <div>🟠 Spot 3 - Taxiway / GA apron</div>
-        <div>🔴 Spot 4 - HNK Konavljanin</div>
-        <div>🟣 Spot 5 - Hill / Airport panorama</div>
-    `;
 
-    return div;
-};
+/* ==========================================
+   LEGEND
+   ========================================== */
 
-legend.addTo(map);
+.map-legend {
+    background: rgba(16, 24, 32, 0.95);
+    padding: 12px 15px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.map-legend h4 {
+    margin: 0 0 8px;
+}
+
+.map-legend div {
+    margin: 5px 0;
+}
