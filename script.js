@@ -1,9 +1,9 @@
 // ==========================================
 // DUBROVNIK PLANESPOTTING - LDDU
-// Real spotting locations
+// Spotting positions
 // ==========================================
 
-const map = L.map("map").setView([42.5638, 18.2570], 14);
+const map = L.map("map").setView([42.5680, 18.2600], 14);
 
 
 // OpenStreetMap
@@ -28,116 +28,157 @@ L.marker([42.5624, 18.2660])
 
 // ==========================================
 // SPOTTING POSITION 1
-// RWY 11 SHORT FINAL
 // ==========================================
 
-L.marker([42.570499, 18.239793])
+L.marker([42.57024915946364, 18.245391561326596])
     .addTo(map)
     .bindPopup(`
-        <h3>🟢 RWY 11 Short Final</h3>
+        <h3>🟢 Spotting Position 1</h3>
 
         <p>
-            One of the documented spotting locations
-            near Močići.
+            ✈️ Aircraft can be seen just seconds
+            before touchdown.
         </p>
 
         <p>
-            📍 <b>42.570499, 18.239793</b>
+            📍 42.570249, 18.245392
         </p>
 
         <p>
-            ✈️ Excellent for aircraft on final approach
-            to RWY 11.
-        </p>
-
-        <p>
-            📷 Especially good for approach photography.
+            📸 Excellent position for close-up
+            landing photographs.
         </p>
     `);
 
 
 // ==========================================
 // SPOTTING POSITION 2
-// RWY 11 - CHURCH / PERIMETER
 // ==========================================
 
-L.marker([42.564229, 18.254096])
+L.marker([42.56441239157695, 18.253351872913807])
     .addTo(map)
     .bindPopup(`
-        <h3>🔵 RWY 11 Perimeter Spot</h3>
+        <h3>🔵 Spotting Position 2</h3>
 
         <p>
-            Documented spotting position near the
-            perimeter behind the church.
+            ⭐ Very good spotting position.
         </p>
 
         <p>
-            📍 <b>42.564229, 18.254096</b>
+            ✈️ You can see aircraft throughout
+            their movement around the airport.
         </p>
 
         <p>
-            ✈️ Good view of aircraft approaching
-            RWY 11.
+            📍 42.564412, 18.253352
         </p>
 
         <p>
-            📷 Used by plane spotters for approach
-            photography.
+            📸 Great all-around location for
+            plane spotting.
         </p>
     `);
 
 
 // ==========================================
 // SPOTTING POSITION 3
-// RWY 29 - HNK KONAVLJANIN
 // ==========================================
 
-// Approximate map position of the documented
-// HNK Konavljanin football-club spotting area.
-L.marker([42.5597, 18.2745])
+L.marker([42.5573083097695, 18.27213111634963])
     .addTo(map)
     .bindPopup(`
-        <h3>🟠 RWY 29 Approach</h3>
+        <h3>🟠 Spotting Position 3</h3>
 
         <p>
-            HNK Konavljanin football-club area
-            in Čilipi/Konavle.
+            🧱 If you climb on the wall, you can
+            see aircraft on the taxiway and the
+            entire General Aviation apron.
         </p>
 
         <p>
-            ✈️ Documented location for photographing
-            aircraft approaching RWY 29.
+            ✈️ Aircraft vacating via taxiway E
+            can also be photographed very well.
         </p>
 
         <p>
-            📷 Particularly useful when RWY 29
-            is in use.
+            📸 Excellent position for unique
+            taxiing and vacating shots.
+        </p>
+
+        <p>
+            📍 42.557308, 18.272131
         </p>
     `);
 
 
 // ==========================================
-// RUNWAY LINE
+// SPOTTING POSITION 4
+// HNK KONAVLJANIN
 // ==========================================
 
-const runway = L.polyline([
-    [42.5592, 18.2770],
-    [42.5650, 18.2550]
-], {
-    color: "#ff3333",
-    weight: 4,
-    opacity: 0.8
-}).addTo(map);
+L.marker([42.5544013524664, 18.282621230913833])
+    .addTo(map)
+    .bindPopup(`
+        <h3>🔴 HNK Konavljanin</h3>
 
-runway.bindPopup(`
-    <h3>🛫 LDDU Runway 11/29</h3>
-    <p>Runway length: approximately 3,230 m</p>
-    <p>Direction: 11 / 29</p>
-`);
+        <p>
+            ⚽ HNK Konavljanin
+        </p>
+
+        <p>
+            ✈️ Very good spotting location when
+            <b>RWY 29</b> is in use.
+        </p>
+
+        <p>
+            📸 Excellent for aircraft on approach
+            to runway 29.
+        </p>
+
+        <p>
+            📍 42.554401, 18.282621
+        </p>
+    `);
 
 
 // ==========================================
-// MAP LEGEND
+// SPOTTING POSITION 5
+// HILL
+// ==========================================
+
+L.marker([42.588411734070775, 18.246839539179884])
+    .addTo(map)
+    .bindPopup(`
+        <h3>🟣 Hill Spot</h3>
+
+        <p>
+            🏔️ Located on the hill overlooking
+            Dubrovnik Airport.
+        </p>
+
+        <p>
+            ✈️ Aircraft are further away, but you
+            can see the <b>entire airport</b>.
+        </p>
+
+        <p>
+            🌆 You can also see
+            <b>Dubrovnik Old Town</b>.
+        </p>
+
+        <p>
+            📸 Excellent for wide shots and
+            aircraft + airport + Dubrovnik scenery.
+        </p>
+
+        <p>
+            📍 42.588412, 18.246840
+        </p>
+    `);
+
+
+// ==========================================
+// LEGEND
 // ==========================================
 
 const legend = L.control({ position: "bottomright" });
@@ -147,11 +188,13 @@ legend.onAdd = function () {
     const div = L.DomUtil.create("div", "map-legend");
 
     div.innerHTML = `
-        <h4>Planespotting</h4>
-        <div>🟢 RWY 11 Short Final</div>
-        <div>🔵 RWY 11 Perimeter</div>
-        <div>🟠 RWY 29 Approach</div>
-        <div>✈️ Airport</div>
+        <h4>📍 LDDU Spotting</h4>
+
+        <div>🟢 Spot 1 - Seconds before touchdown</div>
+        <div>🔵 Spot 2 - Aircraft visible all the time</div>
+        <div>🟠 Spot 3 - Taxiway / GA apron</div>
+        <div>🔴 Spot 4 - HNK Konavljanin</div>
+        <div>🟣 Spot 5 - Hill / Airport panorama</div>
     `;
 
     return div;
