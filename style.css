@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #101820;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 25px;
+    background: #162431;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+header p {
+    margin: 0;
+    color: #b9c7d3;
+}
+
+#map {
+    width: 100%;
+    height: 650px;
+}
+
+.spots {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.spots h2 {
+    margin-bottom: 25px;
+}
+
+.spot {
+    background: #182733;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid #263b4a;
+}
+
+.spot h3 {
+    margin-top: 0;
+}
+
+.spot p {
+    color: #c5d0d8;
+    line-height: 1.5;
+}
