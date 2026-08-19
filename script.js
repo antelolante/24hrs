@@ -957,50 +957,6 @@ ldzdRunway0422.bindPopup(`
         or when the northern runway is unavailable.</p>
     </div>
 `);
-// ==========================================
-// LEGEND
-// ==========================================
-
-<div class="map-legend">
-
-    <div class="legend-title">📍 Croatia Planespotting</div>
-
-    <!-- LDDU -->
-    <div class="legend-airport">LDDU - Dubrovnik</div>
-
-    <div class="legend-item green">● <span>Spot 1</span></div>
-    <div class="legend-item blue">● <span>Spot 2</span></div>
-    <div class="legend-item orange">● <span>Spot 3</span></div>
-    <div class="legend-item red">● <span>Spot 4</span></div>
-    <div class="legend-item purple">● <span>Spot 5</span></div>
-
-
-    <!-- LDSP -->
-    <div class="legend-airport">LDSP - Split</div>
-
-    <div class="legend-item green">● <span>Spot 1</span></div>
-    <div class="legend-item blue">● <span>Spot 2</span></div>
-    <div class="legend-item orange">● <span>Spot 3</span></div>
-    <div class="legend-item red">● <span>Spot 4</span></div>
-    <div class="legend-item purple">● <span>Spot 5</span></div>
-    <div class="legend-item cyan">◆ <span>Spot 6</span></div>
-    <div class="legend-item purple">● <span>Spot 7</span></div>
-
-
-    <!-- LDZD -->
-    <div class="legend-airport">LDZD - Zadar</div>
-
-    <div class="legend-item green">● <span>Spot 1</span></div>
-    <div class="legend-item blue">● <span>Spot 2</span></div>
-    <div class="legend-item orange">● <span>Spot 3</span></div>
-    <div class="legend-item red">● <span>Spot 4</span></div>
-    <div class="legend-item purple">● <span>Spot 5</span></div>
-    <div class="legend-item cyan">◆ <span>Spot 6</span></div>
-
-
-    <div class="legend-runway">
-        ✈️ <span>Runway</span>
-    </div>
 
 </div>
 
