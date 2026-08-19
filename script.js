@@ -621,20 +621,40 @@ const legend = L.control({
     position: "bottomright"
 });
 
-
 legend.onAdd = function () {
 
-    const div =
-        L.DomUtil.create(
-            "div",
-            "map-legend"
-        );
+    const div = L.DomUtil.create(
+        "div",
+        "map-legend"
+    );
+
+    // Force the legend background and styling
+    div.style.background = "rgba(13, 23, 32, 0.94)";
+    div.style.color = "white";
+    div.style.padding = "14px 16px";
+    div.style.border = "1px solid rgba(255, 255, 255, 0.25)";
+    div.style.borderRadius = "12px";
+    div.style.boxShadow = "0 6px 20px rgba(0, 0, 0, 0.5)";
+    div.style.fontFamily = "Arial, Helvetica, sans-serif";
+    div.style.fontSize = "14px";
+    div.style.lineHeight = "1.7";
+    div.style.minWidth = "190px";
+    div.style.backdropFilter = "blur(6px)";
+    div.style.webkitBackdropFilter = "blur(6px)";
 
     div.innerHTML = `
 
-        <h4>🇭🇷 Croatia Planespotting</h4>
+        <h4 style="
+            margin:0 0 10px 0;
+            color:white;
+            font-size:16px;
+        ">
+            🇭🇷 Croatia Planespotting
+        </h4>
 
-        <strong>LDDU - Dubrovnik</strong>
+        <strong style="color:white;">
+            LDDU - Dubrovnik
+        </strong>
 
         <div style="color:#39d353">
             🟢 Spot 1
@@ -658,7 +678,9 @@ legend.onAdd = function () {
 
         <br>
 
-        <strong>LDSP - Split</strong>
+        <strong style="color:white;">
+            LDSP - Split
+        </strong>
 
         <div style="color:#39d353">
             🟢 Spot 1
@@ -698,6 +720,5 @@ legend.onAdd = function () {
 
     return div;
 };
-
 
 legend.addTo(map);
