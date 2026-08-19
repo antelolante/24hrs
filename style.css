@@ -381,3 +381,8 @@ body {
 
     color: #ff4444;
 }
+
+/* Hide the map legend */
+.map-legend {
+    display: none !important;
+}
