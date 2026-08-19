@@ -79,3 +79,18 @@ body {
 .popup h3 {
     margin-top: 0;
 }
+
+/* ============================================================
+   MAP AIRPORT / SPOTTING LABELS
+   ============================================================ */
+
+.map-label {
+    background: rgba(13, 23, 32, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 8px 12px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    font-weight: bold;
+}
