@@ -1,57 +1,188 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Croatia Planespotting</title>
 
-    <link rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
 
+    <!-- Your website CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>🇭🇷 Croatia Planespotting</h1>
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header class="site-header">
+        <h1>✈️ Croatia Planespotting</h1>
         <p>LDDU / DBV • Dubrovnik Ruđer Bošković Airport</p>
     </header>
 
-    <div id="map"></div>
 
-    <section class="spots">
+    <!-- =========================
+         MAP
+         ========================= -->
 
-        <h2>📍 Planespotting mjesta</h2>
+    <main>
 
-        <div class="spot">
-            <h3>🟢 RWY 11 Approach</h3>
-            <p>
-                Odlična pozicija za avione koji prilaze na RWY 11.
-                Pogled prema završnom prilazu i dijelu aerodroma.
-            </p>
-        </div>
+        <div id="map"></div>
 
-        <div class="spot">
-            <h3>🔵 RWY 29 Approach</h3>
-            <p>
-                Pozicija za suprotni smjer piste, posebno zanimljiva
-                kada se koristi RWY 29.
-            </p>
-        </div>
 
-        <div class="spot">
-            <h3>🟠 Hill Spot</h3>
-            <p>
-                Viša pozicija s pogledom prema aerodromu i pisti.
-                Dobra za fotografije s većom količinom pozadine.
-            </p>
-        </div>
+        <!-- =========================
+             SPOTTING INFORMATION
+             ========================= -->
 
-    </section>
+        <section class="spotting-info">
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            <h2>📍 Planespotting mjesta</h2>
+
+
+            <!-- =====================
+                 DUBROVNIK
+                 ===================== -->
+
+            <h3>✈️ Dubrovnik Airport — LDDU</h3>
+
+            <div class="spot-card">
+                <h4>🟢 Spot 1 — RWY 11 Approach</h4>
+                <p>
+                    Aircraft can be seen seconds before touchdown on RWY 11.
+                    Excellent position for close approach photographs.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🔵 Spot 2 — Aircraft Throughout Their Movement</h4>
+                <p>
+                    Very good all-around position where you can follow
+                    aircraft for a large part of their movement around
+                    the airport.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🟠 Spot 3 — Taxiway / General Aviation Apron</h4>
+                <p>
+                    Climb onto the wall for a great view of aircraft on
+                    the taxiway and the entire General Aviation apron.
+                    Aircraft vacating via E can also be photographed
+                    very well.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🔴 Spot 4 — HNK Konavljanin</h4>
+                <p>
+                    Very good location when RWY 29 is in use.
+                    Particularly useful for arrivals and departures
+                    from this direction.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🟣 Spot 5 — Hill / Airport Panorama</h4>
+                <p>
+                    Elevated position with aircraft in the distance
+                    and a panoramic view of the entire airport and
+                    Dubrovnik Old Town.
+                </p>
+            </div>
+
+
+            <!-- =====================
+                 SPLIT
+                 ===================== -->
+
+            <h3>✈️ Split Airport — LDSP</h3>
+
+            <div class="spot-card">
+                <h4>🟢 Spot 1 — RWY 23 Arrival</h4>
+                <p>
+                    Excellent position for aircraft arriving on RWY 23.
+                    Great for photographing aircraft on final approach.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🔵 Spot 2 — RWY 23 End</h4>
+                <p>
+                    Very good position near the end of RWY 23 with
+                    excellent views of arriving and departing aircraft.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🟠 Spot 3 — RWY 23 Touchdown</h4>
+                <p>
+                    Great location for touchdown shots and aircraft
+                    on short final when RWY 23 is in use.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🔴 Spot 4 — RWY 05</h4>
+                <p>
+                    Good position for aircraft operating around the
+                    RWY 05 end, especially when RWY 05 is active.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🟣 Spot 5 — RWY 05 Line-up</h4>
+                <p>
+                    Good view of aircraft lining up, backtracking
+                    and operating on RWY 05.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🔷 Spot 6 — Observation Deck</h4>
+                <p>
+                    Observation position at the terminal with views
+                    of aircraft movements around Split Airport.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🟣 Spot 7 — Terminal</h4>
+                <p>
+                    Position around the terminal area with views of
+                    aircraft movements and airport operations.
+                </p>
+            </div>
+
+            <div class="spot-card">
+                <h4>🩷 Spot 8 — Mountain Spot</h4>
+                <p>
+                    Elevated position west of the airport with a wide
+                    view of the airport. Good for RWY 05 arrivals and
+                    RWY 23 departures.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         LEAFLET
+         ========================= -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <!-- Your map JavaScript -->
     <script src="script.js"></script>
 
 </body>
