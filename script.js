@@ -1010,3 +1010,7 @@ ldzdRunway0422.bindPopup(`
     </div>
 
 </div>
+
+setTimeout(() => {
+    map.invalidateSize();
+}, 300);
