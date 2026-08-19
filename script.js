@@ -971,3 +971,88 @@ setTimeout(() => {
 setTimeout(() => {
     map.invalidateSize();
 }, 300);
+
+// ==========================================
+// LEGEND
+// ==========================================
+
+const legend = L.control({
+    position: "bottomright"
+});
+
+legend.onAdd = function () {
+
+    const div =
+        L.DomUtil.create(
+            "div",
+            "map-legend"
+        );
+
+    div.innerHTML = `
+        <h4>🇭🇷 Croatia Planespotting</h4>
+
+        <strong>LDDU - Dubrovnik</strong>
+
+        <div style="color:#39d353">
+            🟢 Spot 1
+        </div>
+
+        <div style="color:#3399ff">
+            🔵 Spot 2
+        </div>
+
+        <div style="color:#ff9d00">
+            🟠 Spot 3
+        </div>
+
+        <div style="color:#ff4444">
+            🔴 Spot 4
+        </div>
+
+        <div style="color:#c04cff">
+            🟣 Spot 5
+        </div>
+
+        <br>
+
+        <strong>LDSP - Split</strong>
+
+        <div style="color:#39d353">
+            🟢 Spot 1
+        </div>
+
+        <div style="color:#3399ff">
+            🔵 Spot 2
+        </div>
+
+        <div style="color:#ff9d00">
+            🟠 Spot 3
+        </div>
+
+        <div style="color:#ff4444">
+            🔴 Spot 4
+        </div>
+
+        <div style="color:#c04cff">
+            🟣 Spot 5
+        </div>
+
+        <div style="color:#00bcd4">
+            🔷 Spot 6
+        </div>
+
+        <div style="color:#9c27b0">
+            🟣 Spot 7
+        </div>
+
+        <br>
+
+        <div style="color:#ff3333">
+            🛫 Runway
+        </div>
+    `;
+
+    return div;
+};
+
+legend.addTo(map);
