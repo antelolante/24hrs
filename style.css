@@ -16,6 +16,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 /* ============================================================
    HEADER
    ============================================================ */
@@ -39,6 +40,7 @@ body {
     font-size: 15px;
 }
 
+
 /* ============================================================
    MAP
    ============================================================ */
@@ -50,6 +52,7 @@ body {
     position: relative;
     z-index: 1;
 }
+
 
 /* ============================================================
    LEAFLET CONTROLS
@@ -65,9 +68,9 @@ body {
     background: #22394b !important;
 }
 
+
 /* ============================================================
    MAP LABELS
-   Dark background behind permanent labels
    ============================================================ */
 
 .leaflet-tooltip {
@@ -89,10 +92,10 @@ body {
     -webkit-backdrop-filter: blur(5px);
 }
 
-/* Remove the little Leaflet tooltip arrow */
 .leaflet-tooltip:before {
     display: none !important;
 }
+
 
 /* ============================================================
    MAP POPUPS
@@ -130,6 +133,7 @@ body {
     color: #ffffff !important;
 }
 
+
 /* ============================================================
    SPOTTING INFORMATION
    ============================================================ */
@@ -152,6 +156,7 @@ body {
     font-size: 23px;
     font-weight: 700;
 }
+
 
 /* ============================================================
    SPOT CARDS
@@ -182,21 +187,18 @@ body {
 
 .spot-card h4 {
     margin: 0 0 10px;
-
     color: #ffffff;
-
     font-size: 18px;
     font-weight: 700;
 }
 
 .spot-card p {
     margin: 0;
-
     color: #c9d6e2;
-
     font-size: 15px;
     line-height: 1.6;
 }
+
 
 /* ============================================================
    GENERAL POPUP CLASS
@@ -210,6 +212,7 @@ body {
     margin-top: 0;
 }
 
+
 /* ============================================================
    AIRPORT SECTION SEPARATION
    ============================================================ */
@@ -217,6 +220,23 @@ body {
 .spotting-info h3:first-of-type {
     margin-top: 10px;
 }
+
+
+/* ============================================================
+   MAP LEGEND
+   ============================================================ */
+
+/*
+   The legend still exists in JavaScript so it does NOT cause
+   a "legend is not defined" error.
+
+   It is simply hidden from the screen.
+*/
+
+.map-legend {
+    display: none !important;
+}
+
 
 /* ============================================================
    MOBILE
@@ -238,6 +258,7 @@ body {
 
     #map {
         height: 450px;
+        min-height: 450px;
     }
 
     .spotting-info {
@@ -268,121 +289,4 @@ body {
         font-size: 12px;
         padding: 6px 9px !important;
     }
-}
-/* ==========================================
-   MAP LEGEND
-   ========================================== */
-
-.map-legend {
-    position: absolute;
-    bottom: 25px;
-    right: 20px;
-
-    width: 230px;
-    max-height: 80%;
-    overflow-y: auto;
-
-    padding: 16px;
-
-    background: rgba(15, 25, 35, 0.95);
-    color: white;
-
-    border-radius: 12px;
-
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-
-    font-family: Arial, sans-serif;
-
-    z-index: 1000;
-}
-
-
-/* Title */
-
-.legend-title {
-    font-size: 17px;
-    font-weight: bold;
-
-    margin-bottom: 14px;
-
-    color: white;
-}
-
-
-/* Airport names */
-
-.legend-airport {
-    font-size: 15px;
-    font-weight: bold;
-
-    margin-top: 14px;
-    margin-bottom: 7px;
-
-    color: white;
-
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-
-    padding-bottom: 5px;
-}
-
-
-/* Individual spots */
-
-.legend-item {
-    font-size: 14px;
-
-    line-height: 22px;
-
-    white-space: nowrap;
-}
-
-.legend-item span {
-    margin-left: 4px;
-}
-
-
-/* Colours */
-
-.green {
-    color: #39d98a;
-}
-
-.blue {
-    color: #3d8bfd;
-}
-
-.orange {
-    color: #ff9f43;
-}
-
-.red {
-    color: #ff4757;
-}
-
-.purple {
-    color: #9b59ff;
-}
-
-.cyan {
-    color: #20c7e8;
-}
-
-
-/* Runway */
-
-.legend-runway {
-    margin-top: 14px;
-
-    padding-top: 10px;
-
-    border-top: 1px solid rgba(255,255,255,0.15);
-
-    font-size: 14px;
-
-    color: #ff4444;
-}
-
-/* Hide the map legend */
-.map-legend {
-    display: none !important;
 }
