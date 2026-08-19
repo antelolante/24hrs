@@ -376,310 +376,178 @@ ldduRunway.bindPopup(`
 // RWY 23 ARRIVAL - MORNING
 // ==========================================
 
+// ============================================================
+// LDSP - SPLIT AIRPORT SPOTTING POSITIONS
+// ============================================================
+
+// SPOT 1
 createSpotMarker(
-    43.5319,
-    16.3028,
+    43.546278,
+    16.312611,
     "1",
     "#39d353"
 )
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟢 LDSP Spot 1</h3>
-
-        <p>
-            <strong>RWY 23 Arrival</strong>
-        </p>
-
-        <p>
-            ✈️ Good for aircraft movements
-            on runway 23.
-        </p>
-
-        <p>
-            🌅 Best light:
-            <strong>sunrise – 13:00</strong>
-        </p>
-
-        <p>
-            📷 Recommended:
-            <strong>70–200mm</strong>
-        </p>
-
-        <p>
-            🪜 2-step ladder recommended.
-        </p>
-
+        <p><strong>RWY 23 Arrival</strong></p>
+        <p>Excellent position for aircraft arriving on RWY 23.</p>
+        <p>🌅 Best light: sunrise – 13:00</p>
+        <p>📍 43.546278, 16.312611</p>
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 2
-// RWY 23 END - AFTERNOON
-// ==========================================
-
+// SPOT 2
 createSpotMarker(
-    43.5456,
-    16.3143,
+    43.546639,
+    16.309306,
     "2",
     "#3399ff"
 )
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🔵 LDSP Spot 2</h3>
-
-        <p>
-            <strong>RWY 23 afternoon end</strong>
-        </p>
-
-        <p>
-            ✈️ Good for aircraft movements
-            on runway 23.
-        </p>
-
-        <p>
-            🌅 Best light:
-            <strong>14:30 – sunset</strong>
-        </p>
-
-        <p>
-            📷 Recommended:
-            <strong>70–200mm</strong>
-        </p>
-
-        <p>
-            🪜 2-step ladder recommended.
-        </p>
-
+        <p><strong>RWY 23 End</strong></p>
+        <p>Very good for aircraft movements around the end of RWY 23.</p>
+        <p>🌅 Best light: afternoon – sunset</p>
+        <p>📍 43.546639, 16.309306</p>
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 3
-// SHORT FINAL / TOUCHDOWN RWY 23
-// ==========================================
-
+// SPOT 3
 createSpotMarker(
-    43.5473,
-    16.3168,
+    43.545583,
+    16.307361,
     "3",
     "#ff9d00"
 )
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟠 LDSP Spot 3</h3>
-
-        <p>
-            <strong>Short Final / Touchdown RWY 23</strong>
-        </p>
-
-        <p>
-            🛬 Excellent for touchdowns
-            and smaller aircraft on short final.
-        </p>
-
-        <p>
-            🌅 Best light:
-            <strong>14:30 – sunset</strong>
-        </p>
-
-        <p>
-            📷 Recommended:
-            <strong>70–200mm</strong>
-        </p>
-
-        <p>
-            🪜 2-step ladder recommended.
-        </p>
-
+        <p><strong>RWY 23 Short Final / Touchdown</strong></p>
+        <p>Excellent for touchdowns and aircraft on short final.</p>
+        <p>🌅 Best light: 14:30 – sunset</p>
+        <p>📍 43.545583, 16.307361</p>
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 4
-// RWY 05 TURNING AREA
-// ==========================================
-
+// SPOT 4
 createSpotMarker(
-    43.5301,
-    16.2889,
+    43.534528,
+    16.288333,
     "4",
     "#ff4444"
 )
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🔴 LDSP Spot 4</h3>
-
-        <p>
-            <strong>RWY 05 Turning Area</strong>
-        </p>
-
-        <p>
-            ✈️ Great for aircraft
-            turning at runway 05.
-        </p>
-
-        <p>
-            🌅 Best light:
-            <strong>15:00 – sunset</strong>
-        </p>
-
-        <p>
-            📷 Recommended:
-            <strong>100–300mm</strong>
-        </p>
-
-        <p>
-            🪜 2-step ladder recommended.
-        </p>
-
+        <p><strong>RWY 05 Turning Area</strong></p>
+        <p>Excellent position for aircraft turning at RWY 05.</p>
+        <p>🌅 Best light: 15:00 – sunset</p>
+        <p>📍 43.534528, 16.288333</p>
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 5
-// RWY 05 LINE-UP / APPROACH
-// ==========================================
-
+// SPOT 5
 createSpotMarker(
-    43.5398,
-    16.3050,
+    43.535056,
+    16.292611,
     "5",
     "#c04cff"
 )
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟣 LDSP Spot 5</h3>
-
+        <p><strong>RWY 05 Line-up & Approach</strong></p>
         <p>
-            <strong>RWY 05 Line-up & Approach</strong>
+            Good for line-ups, approaches and
+            backtracking on RWY 05.
         </p>
-
-        <p>
-            🛫 Excellent for line-ups,
-            approaches and backtracking.
-        </p>
-
-        <p>
-            🏢 You can also see parts
-            of the apron.
-        </p>
-
-        <p>
-            🌅 Best light:
-            <strong>sunrise – 13:00</strong>
-        </p>
-
-        <p>
-            📷 Recommended:
-            <strong>70–200mm</strong>
-        </p>
-
+        <p>🌅 Best light: sunrise – 13:00</p>
+        <p>📍 43.535056, 16.292611</p>
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 6
-// OBSERVATION DECK
-// ==========================================
-
+// SPOT 6
 createSpotMarker(
-    43.5389,
-    16.2980,
+    43.535639,
+    16.294722,
     "6",
     "#00bcd4"
 )
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
-        <h3>🔷 LDSP Spot 6 - Observation Deck</h3>
-
+        <h3>🔷 LDSP Spot 6</h3>
+        <p><strong>Observation Deck</strong></p>
         <p>
-            🏢 Official viewing gallery
-            inside the terminal.
+            Official observation area inside
+            the terminal.
         </p>
-
         <p>
-            ✈️ You can see essentially
-            <strong>all aircraft movements.</strong>
+            ✈️ Excellent for seeing aircraft
+            movements around the airport.
         </p>
-
-        <p>
-            🌅 Best light:
-            <strong>sunrise – 13:00</strong>
-        </p>
-
-        <p>
-            📷 Approx. 80mm for taxiing
-            and 120mm for runway shots.
-        </p>
-
-        <p>
-            ☕ Terminal facilities available.
-        </p>
-
+        <p>📍 43.535639, 16.294722</p>
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 7
-// MOUNTAIN
-// ==========================================
-
+// SPOT 7
 createSpotMarker(
-    43.5265,
-    16.2685,
+    43.536139,
+    16.297583,
     "7",
     "#9c27b0"
 )
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
-        <h3>🟣 LDSP Spot 7 - Mountain</h3>
-
+        <h3>🟣 LDSP Spot 7</h3>
+        <p><strong>Terminal / Observation Position</strong></p>
         <p>
-            🏔️ Mountain spotting position
-            west of the airport.
+            Position from the terminal area
+            with views of airport movements.
         </p>
+        <p>📍 43.536139, 16.297583</p>
+    </div>
+`);
 
+
+// SPOT 8
+createSpotMarker(
+    43.533722,
+    16.274944,
+    "8",
+    "#ff69b4"
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+        <h3>🩷 LDSP Spot 8 - Mountain</h3>
+        <p><strong>Mountain Spot</strong></p>
         <p>
-            🛬 Good for
-            <strong>RWY 05 arrivals</strong>
+            Elevated position west of the airport.
+        </p>
+        <p>
+            🛬 Good for RWY 05 arrivals
             and backtracking.
         </p>
-
         <p>
-            🛫 Also good for
-            <strong>RWY 23 departures.</strong>
+            🛫 Also good for RWY 23 departures.
         </p>
-
-        <p>
-            🌅 Best light:
-            <strong>15:00 – sunset</strong>
-        </p>
-
-        <p>
-            📷 Recommended:
-            <strong>300mm+</strong>
-        </p>
-
+        <p>🌅 Best light: 15:00 – sunset</p>
+        <p>📍 43.533722, 16.274944</p>
     </div>
 `);
 
