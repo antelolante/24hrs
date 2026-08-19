@@ -612,7 +612,375 @@ L.polyline(LDSP_RUNWAY, {
         <p>Heading: 052° / 232°</p>
     </div>
 `);
+// ============================================================
+// LDZD - ZADAR AIRPORT
+// ============================================================
 
+// ==========================================
+// LDZD SPOT 1
+// Fence front - RWY 13/31 movements
+// ==========================================
+
+createSpotMarker(
+    44.1119,
+    15.3508,
+    "1",
+    "#39d353"
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+        <h3>🟢 LDZD Spot 1 - Fence Front</h3>
+
+        <p>
+            <strong>RWY 13/31 movements</strong>
+        </p>
+
+        <p>
+            ⭐ One of the best positions at Zadar.
+        </p>
+
+        <p>
+            🛬 Good for RWY 31 arrivals and line-ups.
+        </p>
+
+        <p>
+            🛬 RWY 13 arrivals can also be photographed,
+            especially near the last exit.
+        </p>
+
+        <p>
+            🌅 Taxiway: sunrise – early noon
+        </p>
+
+        <p>
+            📍 44.1119, 15.3508
+        </p>
+    </div>
+`);
+
+
+// ==========================================
+// LDZD SPOT 2
+// Terminal Fence - Apron
+// ==========================================
+
+createSpotMarker(
+    44.1094,
+    15.3484,
+    "2",
+    "#3399ff"
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+        <h3>🔵 LDZD Spot 2 - Terminal Fence</h3>
+
+        <p>
+            <strong>Apron & aircraft movements</strong>
+        </p>
+
+        <p>
+            ✈️ Good view of the apron and parked aircraft.
+        </p>
+
+        <p>
+            📸 Suitable for both taxiway and runway photography.
+        </p>
+
+        <p>
+            🌅 Best light: sunrise – late morning
+        </p>
+
+        <p>
+            📍 44.1094, 15.3484
+        </p>
+    </div>
+`);
+
+
+// ==========================================
+// LDZD SPOT 3
+// RWY 22 Threshold
+// ==========================================
+
+createSpotMarker(
+    44.1018,
+    15.3602,
+    "3",
+    "#ff9d00"
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+        <h3>🟠 LDZD Spot 3 - RWY 22 Threshold</h3>
+
+        <p>
+            <strong>RWY 04/22 movements</strong>
+        </p>
+
+        <p>
+            🛫 Excellent for RWY 22 line-ups.
+        </p>
+
+        <p>
+            🛬 Aircraft vacating after RWY 04 arrivals
+            can also be seen.
+        </p>
+
+        <p>
+            ✈️ The southern part of the GAT can also
+            be visible from here.
+        </p>
+
+        <p>
+            🌅 Best light: sunrise – early afternoon
+        </p>
+
+        <p>
+            📍 44.1018, 15.3602
+        </p>
+    </div>
+`);
+
+
+// ==========================================
+// LDZD SPOT 4
+// Gate P7 - RWY 04
+// ==========================================
+
+createSpotMarker(
+    44.0928,
+    15.3722,
+    "4",
+    "#ff4444"
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+        <h3>🔴 LDZD Spot 4 - Gate P7</h3>
+
+        <p>
+            <strong>RWY 04 movements</strong>
+        </p>
+
+        <p>
+            🛬 Good position for RWY 04 arrivals.
+        </p>
+
+        <p>
+            🛫 Also suitable for aircraft lining up
+            for RWY 04.
+        </p>
+
+        <p>
+            🌅 Best light: sunrise – later morning
+        </p>
+
+        <p>
+            📍 44.0928, 15.3722
+        </p>
+    </div>
+`);
+
+
+// ==========================================
+// LDZD SPOT 5
+// RWY 04 Head
+// ==========================================
+
+createSpotMarker(
+    44.0858,
+    15.3640,
+    "5",
+    "#c04cff"
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+        <h3>🟣 LDZD Spot 5 - RWY 04 Head</h3>
+
+        <p>
+            <strong>RWY 04 arrivals & line-ups</strong>
+        </p>
+
+        <p>
+            🛬 Very good for RWY 04 approaches.
+        </p>
+
+        <p>
+            🛫 Excellent view of aircraft lining up
+            on RWY 04.
+        </p>
+
+        <p>
+            🌅 Line-ups: later morning – sunset
+        </p>
+
+        <p>
+            📍 44.0858, 15.3640
+        </p>
+    </div>
+`);
+
+
+// ==========================================
+// LDZD SPOT 6
+// Highway Turnoff - RWY 04 Arrivals
+// ==========================================
+
+createSpotMarker(
+    44.0757,
+    15.3560,
+    "6",
+    "#00bcd4"
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+        <h3>🔷 LDZD Spot 6 - Highway Turnoff</h3>
+
+        <p>
+            <strong>RWY 04 arrivals</strong>
+        </p>
+
+        <p>
+            🛬 Good position for photographing
+            aircraft on final approach to RWY 04.
+        </p>
+
+        <p>
+            📸 Recommended focal length:
+            approximately 100–400mm.
+        </p>
+
+        <p>
+            🌅 Best light: sunrise – early afternoon
+        </p>
+
+        <p>
+            📍 44.0757, 15.3560
+        </p>
+    </div>
+`);
+
+
+// ==========================================
+// LDZD AIRPORT
+// ==========================================
+
+L.marker(
+    [44.1088, 15.3467],
+    {
+        icon: createAirportIcon()
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>✈️ Zadar Airport</h3>
+
+        <p>
+            <strong>LDZD / ZAD</strong>
+        </p>
+
+        <p>
+            Zadar Zemunik Airport
+        </p>
+
+        <p>
+            Runways:
+            <strong>04/22 & 13/31</strong>
+        </p>
+
+        <p>
+            RWY 13/31:
+            <strong>2,500 m</strong>
+        </p>
+
+        <p>
+            RWY 04/22:
+            <strong>2,000 m</strong>
+        </p>
+
+    </div>
+`);
+
+
+// ==========================================
+// LDZD RUNWAY 13/31
+// ==========================================
+
+const LDZD_RUNWAY_13_31 = [
+    [44.1192, 15.3285],
+    [44.0984, 15.3650]
+];
+
+L.polyline(
+    LDZD_RUNWAY_13_31,
+    {
+        color: "#ff3333",
+        weight: 6,
+        opacity: 0.8
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+        <h3>🛫 LDZD RWY 13/31</h3>
+
+        <p>
+            <strong>Zadar Airport</strong>
+        </p>
+
+        <p>
+            Length: 2,500 m
+        </p>
+
+        <p>
+            Main runway for normal traffic.
+        </p>
+    </div>
+`);
+
+
+// ==========================================
+// LDZD RUNWAY 04/22
+// ==========================================
+
+const LDZD_RUNWAY_04_22 = [
+    [44.1010, 15.3340],
+    [44.1165, 15.3520]
+];
+
+L.polyline(
+    LDZD_RUNWAY_04_22,
+    {
+        color: "#ff3333",
+        weight: 5,
+        opacity: 0.65
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+        <h3>🛫 LDZD RWY 04/22</h3>
+
+        <p>
+            <strong>Zadar Airport</strong>
+        </p>
+
+        <p>
+            Length: 2,000 m
+        </p>
+
+        <p>
+            RWY 04 is used mainly when required
+            by wind or when RWY 13/31 is unavailable.
+        </p>
+    </div>
+`);
 // ==========================================
 // LEGEND
 // ==========================================
