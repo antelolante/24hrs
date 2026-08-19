@@ -1083,6 +1083,33 @@ legend.onAdd = function () {
         <div style="color:#ff3333">
             🛫 Runway
         </div>
+        <br>
+
+<strong>LDZD - Zadar</strong>
+
+<div style="color:#39d353">
+    🟢 Spot 1
+</div>
+
+<div style="color:#3399ff">
+    🔵 Spot 2
+</div>
+
+<div style="color:#ff9d00">
+    🟠 Spot 3
+</div>
+
+<div style="color:#ff4444">
+    🔴 Spot 4
+</div>
+
+<div style="color:#c04cff">
+    🟣 Spot 5
+</div>
+
+<div style="color:#00bcd4">
+    🔷 Spot 6
+</div>
 
     `;
 
