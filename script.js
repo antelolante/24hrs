@@ -971,8 +971,3 @@ setTimeout(() => {
 setTimeout(() => {
     map.invalidateSize();
 }, 300);
-
-/* Hide the map legend */
-.map-legend {
-    display: none !important;
-}
