@@ -1,22 +1,54 @@
-/* ============================================================
-   PLANESPOTTING INFORMATION
-   ============================================================ */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #0d1720;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-header {
+    background: #162737;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.site-header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+.site-header p {
+    margin: 0;
+    color: #b8c9d8;
+    font-size: 15px;
+}
+
+#map {
+    width: 100%;
+    height: 560px;
+    min-height: 450px;
+}
 
 .spotting-info {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 35px 25px 60px;
+    padding: 35px 25px 70px;
 }
 
 .spotting-info h2 {
     font-size: 28px;
-    margin-bottom: 30px;
+    margin: 0 0 30px;
 }
 
 .spotting-info h3 {
     font-size: 23px;
-    margin-top: 35px;
-    margin-bottom: 18px;
+    margin: 40px 0 18px;
+    color: #ffffff;
 }
 
 .spot-card {
@@ -25,17 +57,25 @@
     border-radius: 12px;
     padding: 18px 22px;
     margin-bottom: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .spot-card h4 {
     margin: 0 0 10px;
     font-size: 18px;
-    color: white;
+    color: #ffffff;
 }
 
 .spot-card p {
     margin: 0;
     color: #c9d6e2;
     line-height: 1.6;
+}
+
+.popup {
+    color: #111;
+}
+
+.popup h3 {
+    margin-top: 0;
 }
