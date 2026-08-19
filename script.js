@@ -1,11 +1,4 @@
-const map = L.map("map").setView([42.5705, 18.2550], 12);
 
-L.tileLayer(
-    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    {
-        attribution: '&copy; OpenStreetMap contributors'
-    }
-).addTo(map);
 // ==========================================
 // CROATIA PLANESPOTTING
 // LDDU + LDSP
