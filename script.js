@@ -909,76 +909,51 @@ L.marker(
 
 
 // ==========================================
-// LDZD RUNWAY 13/31
+// LDZD RUNWAYS - ZADAR
 // ==========================================
 
-const LDZD_RUNWAY_13_31 = [
-    [44.1192, 15.3285],
-    [44.0984, 15.3650]
-];
-
-L.polyline(
-    LDZD_RUNWAY_13_31,
+// RWY 13/31
+const ldzdRunway1331 = L.polyline(
+    [
+        [44.116386, 15.335694], // RWY 13 threshold
+        [44.100356, 15.357403]  // RWY 31 threshold
+    ],
     {
         color: "#ff3333",
         weight: 6,
-        opacity: 0.8
+        opacity: 0.85
     }
-)
-.addTo(map)
-.bindPopup(`
+).addTo(map);
+
+ldzdRunway1331.bindPopup(`
     <div class="popup">
-        <h3>🛫 LDZD RWY 13/31</h3>
-
-        <p>
-            <strong>Zadar Airport</strong>
-        </p>
-
-        <p>
-            Length: 2,500 m
-        </p>
-
-        <p>
-            Main runway for normal traffic.
-        </p>
+        <h3>🛫 LDZD Runway 13/31</h3>
+        <p><strong>Length:</strong> 2,500 m</p>
+        <p>RWY 13 is mainly used for arrivals.</p>
+        <p>RWY 31 is mainly used for departures.</p>
     </div>
 `);
 
 
-// ==========================================
-// LDZD RUNWAY 04/22
-// ==========================================
-
-const LDZD_RUNWAY_04_22 = [
-    [44.1010, 15.3340],
-    [44.1165, 15.3520]
-];
-
-L.polyline(
-    LDZD_RUNWAY_04_22,
+// RWY 04/22
+const ldzdRunway0422 = L.polyline(
+    [
+        [44.079392, 15.341164], // RWY 04 threshold
+        [44.092767, 15.357653]  // RWY 22 threshold
+    ],
     {
         color: "#ff3333",
-        weight: 5,
-        opacity: 0.65
+        weight: 6,
+        opacity: 0.75
     }
-)
-.addTo(map)
-.bindPopup(`
+).addTo(map);
+
+ldzdRunway0422.bindPopup(`
     <div class="popup">
-        <h3>🛫 LDZD RWY 04/22</h3>
-
-        <p>
-            <strong>Zadar Airport</strong>
-        </p>
-
-        <p>
-            Length: 2,000 m
-        </p>
-
-        <p>
-            RWY 04 is used mainly when required
-            by wind or when RWY 13/31 is unavailable.
-        </p>
+        <h3>🛫 LDZD Runway 04/22</h3>
+        <p><strong>Length:</strong> 2,000 m</p>
+        <p>RWY 04 is used mainly when required by wind
+        or when the northern runway is unavailable.</p>
     </div>
 `);
 // ==========================================
