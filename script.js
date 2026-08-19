@@ -1,4 +1,3 @@
-
 // ==========================================
 // CROATIA PLANESPOTTING
 // LDDU + LDSP
@@ -109,9 +108,7 @@ function createAirportIcon() {
 
 
 // ============================================================
-// ============================================================
 // LDDU - DUBROVNIK
-// ============================================================
 // ============================================================
 
 
@@ -366,22 +363,14 @@ ldduRunway.bindPopup(`
 
 
 // ============================================================
-// ============================================================
 // LDSP - SPLIT
-// ============================================================
 // ============================================================
 
 
 // ==========================================
 // LDSP SPOT 1
-// RWY 23 ARRIVAL - MORNING
 // ==========================================
 
-// ============================================================
-// LDSP - SPLIT AIRPORT SPOTTING POSITIONS
-// ============================================================
-
-// SPOT 1
 createSpotMarker(
     43.546278,
     16.312611,
@@ -391,16 +380,34 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟢 LDSP Spot 1</h3>
-        <p><strong>RWY 23 Arrival</strong></p>
-        <p>Excellent position for aircraft arriving on RWY 23.</p>
-        <p>🌅 Best light: sunrise – 13:00</p>
-        <p>📍 43.546278, 16.312611</p>
+
+        <p>
+            <strong>RWY 23 Arrival</strong>
+        </p>
+
+        <p>
+            Excellent position for aircraft
+            arriving on RWY 23.
+        </p>
+
+        <p>
+            🌅 Best light: sunrise – 13:00
+        </p>
+
+        <p>
+            📍 43.546278, 16.312611
+        </p>
+
     </div>
 `);
 
 
-// SPOT 2
+// ==========================================
+// LDSP SPOT 2
+// ==========================================
+
 createSpotMarker(
     43.546639,
     16.309306,
@@ -410,16 +417,34 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🔵 LDSP Spot 2</h3>
-        <p><strong>RWY 23 End</strong></p>
-        <p>Very good for aircraft movements around the end of RWY 23.</p>
-        <p>🌅 Best light: afternoon – sunset</p>
-        <p>📍 43.546639, 16.309306</p>
+
+        <p>
+            <strong>RWY 23 End</strong>
+        </p>
+
+        <p>
+            Very good for aircraft movements
+            around the end of RWY 23.
+        </p>
+
+        <p>
+            🌅 Best light: afternoon – sunset
+        </p>
+
+        <p>
+            📍 43.546639, 16.309306
+        </p>
+
     </div>
 `);
 
 
-// SPOT 3
+// ==========================================
+// LDSP SPOT 3
+// ==========================================
+
 createSpotMarker(
     43.545583,
     16.307361,
@@ -429,16 +454,34 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟠 LDSP Spot 3</h3>
-        <p><strong>RWY 23 Short Final / Touchdown</strong></p>
-        <p>Excellent for touchdowns and aircraft on short final.</p>
-        <p>🌅 Best light: 14:30 – sunset</p>
-        <p>📍 43.545583, 16.307361</p>
+
+        <p>
+            <strong>RWY 23 Short Final / Touchdown</strong>
+        </p>
+
+        <p>
+            Excellent for touchdowns
+            and aircraft on short final.
+        </p>
+
+        <p>
+            🌅 Best light: 14:30 – sunset
+        </p>
+
+        <p>
+            📍 43.545583, 16.307361
+        </p>
+
     </div>
 `);
 
 
-// SPOT 4
+// ==========================================
+// LDSP SPOT 4
+// ==========================================
+
 createSpotMarker(
     43.534528,
     16.288333,
@@ -448,16 +491,34 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🔴 LDSP Spot 4</h3>
-        <p><strong>RWY 05 Turning Area</strong></p>
-        <p>Excellent position for aircraft turning at RWY 05.</p>
-        <p>🌅 Best light: 15:00 – sunset</p>
-        <p>📍 43.534528, 16.288333</p>
+
+        <p>
+            <strong>RWY 05 Turning Area</strong>
+        </p>
+
+        <p>
+            Excellent position for aircraft
+            turning at RWY 05.
+        </p>
+
+        <p>
+            🌅 Best light: 15:00 – sunset
+        </p>
+
+        <p>
+            📍 43.534528, 16.288333
+        </p>
+
     </div>
 `);
 
 
-// SPOT 5
+// ==========================================
+// LDSP SPOT 5
+// ==========================================
+
 createSpotMarker(
     43.535056,
     16.292611,
@@ -467,19 +528,34 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟣 LDSP Spot 5</h3>
-        <p><strong>RWY 05 Line-up & Approach</strong></p>
+
         <p>
-            Good for line-ups, approaches and
-            backtracking on RWY 05.
+            <strong>RWY 05 Line-up & Approach</strong>
         </p>
-        <p>🌅 Best light: sunrise – 13:00</p>
-        <p>📍 43.535056, 16.292611</p>
+
+        <p>
+            Good for line-ups, approaches
+            and backtracking on RWY 05.
+        </p>
+
+        <p>
+            🌅 Best light: sunrise – 13:00
+        </p>
+
+        <p>
+            📍 43.535056, 16.292611
+        </p>
+
     </div>
 `);
 
 
-// SPOT 6
+// ==========================================
+// LDSP SPOT 6
+// ==========================================
+
 createSpotMarker(
     43.535639,
     16.294722,
@@ -489,22 +565,35 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🔷 LDSP Spot 6</h3>
-        <p><strong>Observation Deck</strong></p>
+
+        <p>
+            <strong>Observation Deck</strong>
+        </p>
+
         <p>
             Official observation area inside
             the terminal.
         </p>
+
         <p>
             ✈️ Excellent for seeing aircraft
             movements around the airport.
         </p>
-        <p>📍 43.535639, 16.294722</p>
+
+        <p>
+            📍 43.535639, 16.294722
+        </p>
+
     </div>
 `);
 
 
-// SPOT 7
+// ==========================================
+// LDSP SPOT 7
+// ==========================================
+
 createSpotMarker(
     43.536139,
     16.297583,
@@ -514,18 +603,30 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟣 LDSP Spot 7</h3>
-        <p><strong>Terminal / Observation Position</strong></p>
+
+        <p>
+            <strong>Terminal / Observation Position</strong>
+        </p>
+
         <p>
             Position from the terminal area
             with views of airport movements.
         </p>
-        <p>📍 43.536139, 16.297583</p>
+
+        <p>
+            📍 43.536139, 16.297583
+        </p>
+
     </div>
 `);
 
 
-// SPOT 8
+// ==========================================
+// LDSP SPOT 8
+// ==========================================
+
 createSpotMarker(
     43.533722,
     16.274944,
@@ -535,20 +636,34 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🩷 LDSP Spot 8 - Mountain</h3>
-        <p><strong>Mountain Spot</strong></p>
+
+        <p>
+            <strong>Mountain Spot</strong>
+        </p>
+
         <p>
             Elevated position west of the airport.
         </p>
+
         <p>
             🛬 Good for RWY 05 arrivals
             and backtracking.
         </p>
+
         <p>
             🛫 Also good for RWY 23 departures.
         </p>
-        <p>🌅 Best light: 15:00 – sunset</p>
-        <p>📍 43.533722, 16.274944</p>
+
+        <p>
+            🌅 Best light: 15:00 – sunset
+        </p>
+
+        <p>
+            📍 43.533722, 16.274944
+        </p>
+
     </div>
 `);
 
@@ -596,8 +711,8 @@ L.marker(
 // ==========================================
 
 const LDSP_RUNWAY = [
-    [43.531944, 16.285583], // RWY 05 end
-    [43.545181, 16.309194]  // RWY 23 end
+    [43.531944, 16.285583],
+    [43.545181, 16.309194]
 ];
 
 L.polyline(LDSP_RUNWAY, {
@@ -605,372 +720,28 @@ L.polyline(LDSP_RUNWAY, {
     weight: 4,
     opacity: 0.75,
     lineCap: "round"
-}).addTo(map).bindPopup(`
+})
+.addTo(map)
+.bindPopup(`
     <div class="popup">
+
         <h3>🛫 LDSP RWY 05/23</h3>
-        <p><strong>Split Airport</strong></p>
-        <p>Length: 2,550 m</p>
-        <p>Heading: 052° / 232°</p>
-    </div>
-`);
-// ============================================================
-// LDZD - ZADAR AIRPORT
-// ============================================================
-
-// ==========================================
-// LDZD SPOT 1
-// Fence front - RWY 13/31 movements
-// ==========================================
-
-createSpotMarker(
-    44.1119,
-    15.3508,
-    "1",
-    "#39d353"
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🟢 LDZD Spot 1 - Fence Front</h3>
 
         <p>
-            <strong>RWY 13/31 movements</strong>
+            <strong>Split Airport</strong>
         </p>
 
         <p>
-            ⭐ One of the best positions at Zadar.
+            Length: 2,550 m
         </p>
 
         <p>
-            🛬 Good for RWY 31 arrivals and line-ups.
-        </p>
-
-        <p>
-            🛬 RWY 13 arrivals can also be photographed,
-            especially near the last exit.
-        </p>
-
-        <p>
-            🌅 Taxiway: sunrise – early noon
-        </p>
-
-        <p>
-            📍 44.1119, 15.3508
-        </p>
-    </div>
-`);
-
-
-// ==========================================
-// LDZD SPOT 2
-// Terminal Fence - Apron
-// ==========================================
-
-createSpotMarker(
-    44.1094,
-    15.3484,
-    "2",
-    "#3399ff"
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🔵 LDZD Spot 2 - Terminal Fence</h3>
-
-        <p>
-            <strong>Apron & aircraft movements</strong>
-        </p>
-
-        <p>
-            ✈️ Good view of the apron and parked aircraft.
-        </p>
-
-        <p>
-            📸 Suitable for both taxiway and runway photography.
-        </p>
-
-        <p>
-            🌅 Best light: sunrise – late morning
-        </p>
-
-        <p>
-            📍 44.1094, 15.3484
-        </p>
-    </div>
-`);
-
-
-// ==========================================
-// LDZD SPOT 3
-// RWY 22 Threshold
-// ==========================================
-
-createSpotMarker(
-    44.1018,
-    15.3602,
-    "3",
-    "#ff9d00"
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🟠 LDZD Spot 3 - RWY 22 Threshold</h3>
-
-        <p>
-            <strong>RWY 04/22 movements</strong>
-        </p>
-
-        <p>
-            🛫 Excellent for RWY 22 line-ups.
-        </p>
-
-        <p>
-            🛬 Aircraft vacating after RWY 04 arrivals
-            can also be seen.
-        </p>
-
-        <p>
-            ✈️ The southern part of the GAT can also
-            be visible from here.
-        </p>
-
-        <p>
-            🌅 Best light: sunrise – early afternoon
-        </p>
-
-        <p>
-            📍 44.1018, 15.3602
-        </p>
-    </div>
-`);
-
-
-// ==========================================
-// LDZD SPOT 4
-// Gate P7 - RWY 04
-// ==========================================
-
-createSpotMarker(
-    44.0928,
-    15.3722,
-    "4",
-    "#ff4444"
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🔴 LDZD Spot 4 - Gate P7</h3>
-
-        <p>
-            <strong>RWY 04 movements</strong>
-        </p>
-
-        <p>
-            🛬 Good position for RWY 04 arrivals.
-        </p>
-
-        <p>
-            🛫 Also suitable for aircraft lining up
-            for RWY 04.
-        </p>
-
-        <p>
-            🌅 Best light: sunrise – later morning
-        </p>
-
-        <p>
-            📍 44.0928, 15.3722
-        </p>
-    </div>
-`);
-
-
-// ==========================================
-// LDZD SPOT 5
-// RWY 04 Head
-// ==========================================
-
-createSpotMarker(
-    44.0858,
-    15.3640,
-    "5",
-    "#c04cff"
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🟣 LDZD Spot 5 - RWY 04 Head</h3>
-
-        <p>
-            <strong>RWY 04 arrivals & line-ups</strong>
-        </p>
-
-        <p>
-            🛬 Very good for RWY 04 approaches.
-        </p>
-
-        <p>
-            🛫 Excellent view of aircraft lining up
-            on RWY 04.
-        </p>
-
-        <p>
-            🌅 Line-ups: later morning – sunset
-        </p>
-
-        <p>
-            📍 44.0858, 15.3640
-        </p>
-    </div>
-`);
-
-
-// ==========================================
-// LDZD SPOT 6
-// Highway Turnoff - RWY 04 Arrivals
-// ==========================================
-
-createSpotMarker(
-    44.0757,
-    15.3560,
-    "6",
-    "#00bcd4"
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🔷 LDZD Spot 6 - Highway Turnoff</h3>
-
-        <p>
-            <strong>RWY 04 arrivals</strong>
-        </p>
-
-        <p>
-            🛬 Good position for photographing
-            aircraft on final approach to RWY 04.
-        </p>
-
-        <p>
-            📸 Recommended focal length:
-            approximately 100–400mm.
-        </p>
-
-        <p>
-            🌅 Best light: sunrise – early afternoon
-        </p>
-
-        <p>
-            📍 44.0757, 15.3560
-        </p>
-    </div>
-`);
-
-
-// ==========================================
-// LDZD AIRPORT
-// ==========================================
-
-L.marker(
-    [44.1088, 15.3467],
-    {
-        icon: createAirportIcon()
-    }
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-
-        <h3>✈️ Zadar Airport</h3>
-
-        <p>
-            <strong>LDZD / ZAD</strong>
-        </p>
-
-        <p>
-            Zadar Zemunik Airport
-        </p>
-
-        <p>
-            Runways:
-            <strong>04/22 & 13/31</strong>
-        </p>
-
-        <p>
-            RWY 13/31:
-            <strong>2,500 m</strong>
-        </p>
-
-        <p>
-            RWY 04/22:
-            <strong>2,000 m</strong>
+            Heading: 052° / 232°
         </p>
 
     </div>
 `);
 
-
-// ==========================================
-// LDZD RUNWAYS - ZADAR
-// ==========================================
-
-// RWY 13/31
-const ldzdRunway1331 = L.polyline(
-    [
-        [44.116386, 15.335694], // RWY 13 threshold
-        [44.100356, 15.357403]  // RWY 31 threshold
-    ],
-    {
-        color: "#ff3333",
-        weight: 6,
-        opacity: 0.85
-    }
-).addTo(map);
-
-ldzdRunway1331.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDZD Runway 13/31</h3>
-        <p><strong>Length:</strong> 2,500 m</p>
-        <p>RWY 13 is mainly used for arrivals.</p>
-        <p>RWY 31 is mainly used for departures.</p>
-    </div>
-`);
-
-
-// RWY 04/22
-const ldzdRunway0422 = L.polyline(
-    [
-        [44.079392, 15.341164], // RWY 04 threshold
-        [44.092767, 15.357653]  // RWY 22 threshold
-    ],
-    {
-        color: "#ff3333",
-        weight: 6,
-        opacity: 0.75
-    }
-).addTo(map);
-
-ldzdRunway0422.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDZD Runway 04/22</h3>
-        <p><strong>Length:</strong> 2,000 m</p>
-        <p>RWY 04 is used mainly when required by wind
-        or when the northern runway is unavailable.</p>
-    </div>
-`);
-
-</div>
-
-setTimeout(() => {
-    map.invalidateSize();
-}, 300);
-
-// ==========================================
-// FIX MAP SIZE
-// ==========================================
-
-setTimeout(() => {
-    map.invalidateSize();
-}, 300);
 
 // ==========================================
 // LEGEND
@@ -982,13 +753,13 @@ const legend = L.control({
 
 legend.onAdd = function () {
 
-    const div =
-        L.DomUtil.create(
-            "div",
-            "map-legend"
-        );
+    const div = L.DomUtil.create(
+        "div",
+        "map-legend"
+    );
 
     div.innerHTML = `
+
         <h4>🇭🇷 Croatia Planespotting</h4>
 
         <strong>LDDU - Dubrovnik</strong>
@@ -1050,9 +821,19 @@ legend.onAdd = function () {
         <div style="color:#ff3333">
             🛫 Runway
         </div>
+
     `;
 
     return div;
 };
 
 legend.addTo(map);
+
+
+// ==========================================
+// FORCE LEAFLET TO RECALCULATE MAP SIZE
+// ==========================================
+
+setTimeout(function () {
+    map.invalidateSize();
+}, 500);
