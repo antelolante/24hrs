@@ -963,18 +963,6 @@ ldzdRunway0422.bindPopup(`
 setTimeout(() => {
     map.invalidateSize();
 }, 300);
-// ==========================================
-// MAP LEGEND
-// ==========================================
-
-const legend = L.control({
-    position: "bottomright"
-});
-
-// ...new legend code here...
-
-legend.addTo(map);
-
 
 // ==========================================
 // FIX MAP SIZE
