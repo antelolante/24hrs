@@ -594,41 +594,24 @@ L.marker(
 // LDSP RUNWAY
 // ==========================================
 
-const ldspRunway = L.polyline(
+const LDSP_RUNWAY = [
+    [43.531944, 16.285583], // RWY 05 end
+    [43.545181, 16.309194]  // RWY 23 end
+];
 
-    [
-        [43.531944, 16.290278],
-        [43.545000, 16.313611]
-    ],
-
-    {
-        color: "#ff3333",
-        weight: 6,
-        opacity: 0.8
-    }
-
-).addTo(map);
-
-
-ldspRunway.bindPopup(`
+L.polyline(LDSP_RUNWAY, {
+    color: "#ff3333",
+    weight: 4,
+    opacity: 0.75,
+    lineCap: "round"
+}).addTo(map).bindPopup(`
     <div class="popup">
-
-        <h3>🛫 LDSP Runway 05/23</h3>
-
-        <p>
-            Length:
-            <strong>2,550 m</strong>
-        </p>
-
-        <p>
-            <strong>05</strong>
-            ← Runway →
-            <strong>23</strong>
-        </p>
-
+        <h3>🛫 LDSP RWY 05/23</h3>
+        <p><strong>Split Airport</strong></p>
+        <p>Length: 2,550 m</p>
+        <p>Heading: 052° / 232°</p>
     </div>
 `);
-
 
 // ==========================================
 // LEGEND
