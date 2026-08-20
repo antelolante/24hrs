@@ -121,9 +121,9 @@ function addSpot(
 ) {
 
     L.marker(
-        [lat,lng],
+        [lat, lng],
         {
-            icon:createSpotIcon(number)
+            icon: createSpotIcon(number)
         }
     )
     .addTo(map)
@@ -159,9 +159,9 @@ function addAirport(
 ) {
 
     L.marker(
-        [lat,lng],
+        [lat, lng],
         {
-            icon:createAirportIcon()
+            icon: createAirportIcon()
         }
     )
     .addTo(map)
@@ -197,16 +197,19 @@ function addRunway(
     L.polyline(
         points,
         {
-            color:"#ff3333",
-            weight:5,
-            opacity:0.8
+            color: "#ff3333",
+            weight: 5,
+            opacity: 0.8
         }
     )
     .addTo(map)
     .bindPopup(`
         <div class="popup">
+
             <h3>🛫 ${name}</h3>
+
             <p>${airport}</p>
+
         </div>
     `);
 }
@@ -307,8 +310,8 @@ addAirport(
 
 addRunway(
     [
-        [42.569572,18.247528],
-        [42.555820,18.282192]
+        [42.569572, 18.247528],
+        [42.555820, 18.282192]
     ],
     "LDDU RWY 11/29",
     "Dubrovnik Airport"
@@ -447,8 +450,8 @@ addAirport(
 
 addRunway(
     [
-        [43.531944,16.285583],
-        [43.545181,16.309194]
+        [43.531944, 16.285583],
+        [43.545181, 16.309194]
     ],
     "LDSP RWY 05/23",
     "Split Airport"
@@ -459,97 +462,83 @@ addRunway(
 // LDZD - ZADAR
 // ============================================================
 
-// Spot 1
-
 addSpot(
     44.1134,
     15.3669,
     1,
-    "LDZD Spot 1 - Fence Front",
+    "LDZD Spot 1",
     `
-    RWY 13/31 movements.
+    Northern spotting position.
     <br><br>
-    Best for RWY 31 arrivals and line-ups.
-    Also useful for RWY 13 arrivals using the last exit.
+    Good for runway movements and arrivals.
     `
 );
 
-
-// Spot 2
 
 addSpot(
     44.1085,
     15.3658,
     2,
-    "LDZD Spot 2 - Terminal Fence",
+    "LDZD Spot 2",
     `
-    Apron position.
+    Terminal-side spotting position.
     <br><br>
-    Good for parked aircraft and apron movements.
+    Useful for apron and taxiway movements.
     `
 );
 
-
-// Spot 3
 
 addSpot(
     44.0877,
     15.3690,
     3,
-    "LDZD Spot 3 - 22 Threshold",
+    "LDZD Spot 3",
     `
-    RWY 04/22 movements.
+    RWY 22 area.
     <br><br>
-    Good for line-ups onto RWY 22 and aircraft
-    vacating after RWY 04 arrivals.
+    Good for runway movements.
     `
 );
 
-
-// Spot 4
 
 addSpot(
     44.0697,
     15.3698,
     4,
-    "LDZD Spot 4 - Gate P7",
+    "LDZD Spot 4",
     `
-    RWY 04 movements.
+    Gate P7 area.
     <br><br>
-    Good for RWY 04 arrivals and line-ups.
+    Useful for RWY 04 movements.
     `
 );
 
-
-// Spot 5
 
 addSpot(
     44.0608,
     15.3575,
     5,
-    "LDZD Spot 5 - 04 Head",
+    "LDZD Spot 5",
     `
-    RWY 04 movements.
+    RWY 04 area.
     <br><br>
-    Good for RWY 04 arrivals and line-ups.
+    Good for arrivals and line-ups.
     `
 );
 
-
-// Spot 6
 
 addSpot(
     44.0500,
     15.3508,
     6,
-    "LDZD Spot 6 - Highway Turnoff",
+    "LDZD Spot 6",
     `
-    RWY 04 arrivals only.
+    Southern spotting position.
+    <br><br>
+    Useful for RWY 04 arrivals.
     `
 );
 
-
-// Airport
 
 addAirport(
     44.0967,
@@ -560,24 +549,20 @@ addAirport(
 );
 
 
-// Runway 13/31
-
 addRunway(
     [
-        [44.1163,15.3357],
-        [44.1003,15.3573]
+        [44.1163, 15.3357],
+        [44.1003, 15.3573]
     ],
     "LDZD RWY 13/31",
     "Zadar Airport"
 );
 
 
-// Runway 04/22
-
 addRunway(
     [
-        [44.0793,15.3412],
-        [44.0938,15.3577]
+        [44.0793, 15.3412],
+        [44.0938, 15.3577]
     ],
     "LDZD RWY 04/22",
     "Zadar Airport"
@@ -587,8 +572,6 @@ addRunway(
 // ============================================================
 // LDRI - RIJEKA
 // ============================================================
-
-// Spot 1
 
 addSpot(
     45.2173,
@@ -602,13 +585,11 @@ addSpot(
 );
 
 
-// Spot 2
-
 addSpot(
     45.2265,
     14.5595,
     2,
-    "LDRI Spot 2 - RWY 14 Approach",
+    "LDRI Spot 2 - RWY 14 Touchdown",
     `
     North perimeter fence.
     <br><br>
@@ -617,13 +598,11 @@ addSpot(
 );
 
 
-// Spot 3
-
 addSpot(
     45.2058,
     14.5815,
     3,
-    "LDRI Spot 3 - RWY 32 Approach",
+    "LDRI Spot 3 - RWY 32 Touchdown",
     `
     South touchdown area.
     <br><br>
@@ -631,8 +610,6 @@ addSpot(
     `
 );
 
-
-// Spot 4
 
 addSpot(
     45.2155,
@@ -645,8 +622,6 @@ addSpot(
 );
 
 
-// Airport
-
 addAirport(
     45.2173,
     14.5721,
@@ -656,12 +631,10 @@ addAirport(
 );
 
 
-// Runway
-
 addRunway(
     [
-        [45.2257,14.5614],
-        [45.2076,14.5802]
+        [45.2257, 14.5614],
+        [45.2076, 14.5802]
     ],
     "LDRI RWY 14/32",
     "Rijeka Airport"
@@ -671,19 +644,23 @@ addRunway(
 // ============================================================
 // LDPL - PULA
 // ============================================================
+//
+// THESE ARE THE FOUR COORDINATES PROVIDED BY THE USER.
+// They replace the previous guessed LDPL positions.
+// ============================================================
+
 
 // Spot 1
 
 addSpot(
-    44.8920,
-    13.9372,
+    44.89304463331475,
+    13.898132213396597,
     1,
-    "LDPL Spot 1 - RWY 27 Approach",
+    "LDPL Spot 1",
     `
-    East perimeter fence.
+    Spotting position west of Pula Airport.
     <br><br>
-    Extremely close-up, low-altitude arrival shots.
-    Aircraft approach over the Valtursko Polje fields.
+    Good view of runway movements.
     `
 );
 
@@ -691,14 +668,14 @@ addSpot(
 // Spot 2
 
 addSpot(
-    44.8913,
-    13.9015,
+    44.88770260819165,
+    13.898164921331809,
     2,
-    "LDPL Spot 2 - RWY 09 Approach",
+    "LDPL Spot 2",
     `
-    West perimeter fence / Stancija Peličeti.
+    Spotting position southwest of the airport.
     <br><br>
-    Good for arrivals from the west during easterly winds.
+    Useful for runway movements and approaches.
     `
 );
 
@@ -706,14 +683,14 @@ addSpot(
 // Spot 3
 
 addSpot(
-    44.8943,
-    13.9212,
+    44.89067421705795,
+    13.949351446173514,
     3,
-    "LDPL Spot 3 - Main Terminal Apron",
+    "LDPL Spot 3",
     `
-    Public parking area.
+    Spotting position east of Pula Airport.
     <br><br>
-    Views toward the main ramp and parked aircraft.
+    Good view of runway movements.
     `
 );
 
@@ -721,15 +698,15 @@ addSpot(
 // Spot 4
 
 addSpot(
-    44.8955,
-    13.9110,
+    44.898544048604855,
+    13.92339056553631,
     4,
-    "LDPL Spot 4 - General Aviation / Military Area",
+    "LDPL Spot 4 - Terminal",
     `
-    Northern side of the airport.
+    Position from the terminal area.
     <br><br>
-    Useful for private traffic, charters and
-    occasional military operations.
+    Good view of aircraft on the apron
+    and taxiway.
     `
 );
 
@@ -737,8 +714,8 @@ addSpot(
 // Airport
 
 addAirport(
-    44.8943,
-    13.9212,
+    44.8935,
+    13.9222,
     "Pula Airport",
     "LDPL / PUY",
     "09/27"
@@ -749,8 +726,8 @@ addAirport(
 
 addRunway(
     [
-        [44.8914,13.9048],
-        [44.8919,13.9392]
+        [44.893131, 13.903594],
+        [44.893931, 13.940717]
     ],
     "LDPL RWY 09/27",
     "Pula Airport"
@@ -761,22 +738,18 @@ addRunway(
 // LDZA - ZAGREB
 // ============================================================
 
-// Spot 1
-
 addSpot(
     45.7483,
     16.0504,
     1,
     "LDZA Spot 1 - RWY 22 Approach",
     `
-    Northern / Mičevec side.
+    Northern approach position.
     <br><br>
-    Popular position for low-altitude RWY 22 arrivals.
+    Good for low-altitude RWY 22 arrivals.
     `
 );
 
-
-// Spot 2
 
 addSpot(
     45.7231,
@@ -784,74 +757,66 @@ addSpot(
     2,
     "LDZA Spot 2 - RWY 04 Approach",
     `
-    Southwest / Pleso area.
+    Southwest approach area.
     <br><br>
-    Good for arrivals approaching RWY 04.
+    Good for RWY 04 arrivals.
     `
 );
 
-
-// Spot 3
 
 addSpot(
     45.7410,
     16.0612,
     3,
-    "LDZA Spot 3 - Old Terminal & Cargo Apron",
+    "LDZA Spot 3 - Old Terminal & Cargo",
     `
-    Northern side.
+    North-side terminal and cargo area.
     <br><br>
-    Useful for cargo, general aviation,
-    maintenance and ramp activity.
+    Useful for cargo, general aviation and
+    maintenance traffic.
     `
 );
 
-
-// Spot 4
 
 addSpot(
     45.7335,
     16.0601,
     4,
-    "LDZA Spot 4 - New Terminal Parking Garage",
+    "LDZA Spot 4 - New Terminal Parking",
     `
-    Upper deck of the public parking garage.
+    Upper level of the new terminal parking area.
     <br><br>
-    High-angle views toward the terminal,
-    jet bridges and taxiways.
+    High-angle views of aircraft around the
+    terminal and taxiway.
     `
 );
 
 
-// Airport
-
 addAirport(
-    45.7339,
+    45.7429,
     16.0688,
-    "Franjo Tuđman Airport",
+    "Zagreb Franjo Tuđman Airport",
     "LDZA / ZAG",
     "04/22"
 );
 
 
-// Runway
-
 addRunway(
     [
-        [45.7275,16.0538],
-        [45.7455,16.0792]
+        [45.7275, 16.0538],
+        [45.7455, 16.0792]
     ],
     "LDZA RWY 04/22",
-    "Franjo Tuđman Airport"
+    "Zagreb Franjo Tuđman Airport"
 );
 
 
 // ============================================================
-// LDZA - PHOTOGRAPHY NOTICE
+// LDZA PHOTOGRAPHY NOTICE
 // ============================================================
 
 const zagrebNotice = L.control({
-    position:"topright"
+    position: "topright"
 });
 
 
@@ -869,20 +834,21 @@ zagrebNotice.onAdd = function() {
 
         <br><br>
 
-        Spot only from public areas and do not enter
-        restricted airport areas.
+        Photography from public areas is different
+        from photography inside restricted
+        operational areas.
 
         <br><br>
 
         <strong>
-        Do not enter runways, taxiways, aircraft stands
-        or other restricted operational areas.
+        Do not enter restricted airport areas,
+        runways, taxiways or aircraft stands.
         </strong>
 
         <br><br>
 
-        Always follow current airport security rules
-        and instructions from airport staff.
+        Always follow airport staff instructions
+        and current airport rules.
 
     `;
 
@@ -897,22 +863,18 @@ zagrebNotice.addTo(map);
 // LDOS - OSIJEK
 // ============================================================
 
-// Spot 1
-
 addSpot(
     45.4668,
     18.8021,
     1,
     "LDOS Spot 1 - RWY 11 Approach",
     `
-    West perimeter fence / Road 5114.
+    Western approach position.
     <br><br>
-    Low-altitude RWY 11 arrival position.
+    Good for low-altitude RWY 11 arrivals.
     `
 );
 
-
-// Spot 2
 
 addSpot(
     45.4578,
@@ -920,14 +882,12 @@ addSpot(
     2,
     "LDOS Spot 2 - RWY 29 Approach",
     `
-    East perimeter / Klisa side.
+    Eastern approach position.
     <br><br>
-    Good for aircraft arriving from the southeast.
+    Good for RWY 29 arrivals and touchdown shots.
     `
 );
 
-
-// Spot 3
 
 addSpot(
     45.4628,
@@ -938,28 +898,24 @@ addSpot(
     Public terminal parking area.
     <br><br>
     Good views of scheduled traffic and aircraft
-    parked on the main ramp.
+    parked on the main apron.
     `
 );
 
 
-// Airport
-
 addAirport(
-    45.46225,
-    18.81015,
+    45.462667,
+    18.810156,
     "Osijek Airport",
     "LDOS / OSI",
     "11/29"
 );
 
 
-// Runway
-
 addRunway(
     [
-        [45.4651,18.8078],
-        [45.4594,18.8258]
+        [45.4651, 18.8078],
+        [45.4594, 18.8258]
     ],
     "LDOS RWY 11/29",
     "Osijek Airport"
@@ -971,7 +927,7 @@ addRunway(
 // ============================================================
 
 const legend = L.control({
-    position:"bottomright"
+    position: "bottomright"
 });
 
 
