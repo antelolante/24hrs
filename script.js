@@ -829,56 +829,7 @@ legend.onAdd = function () {
 
 legend.addTo(map);
 
-{
-    code: "LDZD",
-    name: "Zadar Airport",
-    city: "Zadar",
-    spots: [
-        {
-            name: "Spot 1 – Fence front",
-            lat: 44.1120,
-            lng: 15.3500,
-            color: "green",
-            description: "Excellent position for RWY 13/31 movements, especially RWY 31 arrivals and RWY 13 arrivals."
-        },
-        {
-            name: "Spot 2 – Terminal Fence",
-            lat: 44.1055,
-            lng: 15.3510,
-            color: "blue",
-            description: "Good view of the terminal apron, parked aircraft and aircraft movements."
-        },
-        {
-            name: "Spot 3 – RWY 22 Threshold",
-            lat: 44.0940,
-            lng: 15.3590,
-            color: "orange",
-            description: "Good position for RWY 22 line-ups and aircraft vacating after RWY 04 arrivals."
-        },
-        {
-            name: "Spot 4 – Gate P7",
-            lat: 44.0845,
-            lng: 15.3490,
-            color: "red",
-            description: "Good position for RWY 04 arrivals and line-ups."
-        },
-        {
-            name: "Spot 5 – RWY 04 Head",
-            lat: 44.0775,
-            lng: 15.3415,
-            color: "purple",
-            description: "Excellent position for RWY 04 arrivals and line-ups."
-        },
-        {
-            name: "Spot 6 – Highway Turnoff",
-            lat: 44.0725,
-            lng: 15.3380,
-            color: "cyan",
-            description: "Good position for RWY 04 arrivals."
-        }
-    ]
-}
-
+   
 // ==========================================
 // FORCE LEAFLET TO RECALCULATE MAP SIZE
 // ==========================================
