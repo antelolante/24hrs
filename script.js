@@ -1,17 +1,22 @@
-// ============================================================
-// CROATIA PLANESPOTTING
-// LDDU + LDSP + LDZD + LDRI + LDPL + LDZA + LDOS
-// ============================================================
+/* ============================================================
+   CROATIA PLANESPOTTING
+   Spotting map
+   Airports:
+   LDDU - Dubrovnik
+   LDSP - Split
+   LDZD - Zadar
+   LDRI - Rijeka
+   LDPL - Pula
+   LDZA - Zagreb
+   LDOS - Osijek
+   ============================================================ */
 
 
 // ============================================================
 // MAP
 // ============================================================
 
-const map = L.map("map").setView(
-    [44.5, 16.0],
-    7
-);
+const map = L.map("map").setView([44.8, 16.0], 7);
 
 
 // ============================================================
@@ -28,43 +33,54 @@ L.tileLayer(
 
 
 // ============================================================
-// SPOTTING MARKER
+// COLORS
 // ============================================================
 
-function createSpotMarker(lat, lng, number, color) {
+const spotColors = [
+    "#39d98a",
+    "#3d8bfd",
+    "#ff9f43",
+    "#ff4757",
+    "#9b59ff",
+    "#20c7e8",
+    "#ff69b4",
+    "#f1c40f"
+];
 
-    const icon = L.divIcon({
 
-        className: "",
+// ============================================================
+// SPOTTING ICON
+// ============================================================
+
+function createSpotIcon(number, color) {
+
+    return L.divIcon({
+
+        className: "spot-marker",
 
         html: `
             <div style="
-                width:42px;
-                height:42px;
-                background:${color};
-                border:3px solid white;
-                border-radius:50%;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:white;
-                font-size:18px;
-                font-weight:bold;
-                box-shadow:0 3px 10px rgba(0,0,0,.6);
+                width: 38px;
+                height: 38px;
+                background: ${color};
+                border: 3px solid white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                box-shadow: 0 3px 10px rgba(0,0,0,.55);
             ">
                 ${number}
             </div>
         `,
 
-        iconSize: [42, 42],
-        iconAnchor: [21, 21],
+        iconSize: [38, 38],
+        iconAnchor: [19, 19],
         popupAnchor: [0, -20]
     });
-
-    return L.marker(
-        [lat, lng],
-        { icon: icon }
-    );
 }
 
 
@@ -76,50 +92,52 @@ function createAirportIcon() {
 
     return L.divIcon({
 
-        className: "",
+        className: "airport-marker",
 
         html: `
             <div style="
-                width:46px;
-                height:46px;
-                background:#1473e6;
-                border:3px solid white;
-                border-radius:50%;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                font-size:22px;
-                box-shadow:0 3px 12px rgba(0,0,0,.6);
+                width: 42px;
+                height: 42px;
+                background: #1473e6;
+                border: 3px solid white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                box-shadow: 0 3px 12px rgba(0,0,0,.6);
             ">
-                ✈️
+                ✈
             </div>
         `,
 
-        iconSize: [46, 46],
-        iconAnchor: [23, 23],
-        popupAnchor: [0, -25]
+        iconSize: [42, 42],
+        iconAnchor: [21, 21],
+        popupAnchor: [0, -22]
     });
 }
 
 
 // ============================================================
-// HELPER FOR SPOTS
+// ADD SPOTTING POSITION
 // ============================================================
 
 function addSpot(
     lat,
     lng,
     number,
-    color,
     title,
     description
 ) {
 
-    createSpotMarker(
-        lat,
-        lng,
-        number,
-        color
+    const color =
+        spotColors[(number - 1) % spotColors.length];
+
+    L.marker(
+        [lat, lng],
+        {
+            icon: createSpotIcon(number, color)
+        }
     )
     .addTo(map)
     .bindPopup(`
@@ -132,7 +150,8 @@ function addSpot(
             </p>
 
             <p>
-                📍 ${lat.toFixed(6)}, ${lng.toFixed(6)}
+                <strong>📍 Coordinates</strong><br>
+                ${lat.toFixed(6)}, ${lng.toFixed(6)}
             </p>
 
         </div>
@@ -141,15 +160,15 @@ function addSpot(
 
 
 // ============================================================
-// HELPER FOR AIRPORTS
+// ADD AIRPORT
 // ============================================================
 
 function addAirport(
     lat,
     lng,
     name,
-    code,
-    runways
+    icao,
+    runway
 ) {
 
     L.marker(
@@ -165,12 +184,45 @@ function addAirport(
             <h3>✈️ ${name}</h3>
 
             <p>
-                <strong>${code}</strong>
+                <strong>${icao}</strong>
             </p>
 
             <p>
                 Runway:
-                <strong>${runways}</strong>
+                <strong>${runway}</strong>
+            </p>
+
+        </div>
+    `);
+}
+
+
+// ============================================================
+// ADD RUNWAY
+// ============================================================
+
+function addRunway(
+    points,
+    name,
+    airport
+) {
+
+    L.polyline(
+        points,
+        {
+            color: "#ff3333",
+            weight: 5,
+            opacity: 0.8
+        }
+    )
+    .addTo(map)
+    .bindPopup(`
+        <div class="popup">
+
+            <h3>🛫 ${name}</h3>
+
+            <p>
+                ${airport}
             </p>
 
         </div>
@@ -188,14 +240,12 @@ function addAirport(
 addSpot(
     42.57024915946364,
     18.245391561326596,
-    "1",
-    "#39d353",
+    1,
     "🟢 LDDU Spot 1",
     `
-        Aircraft can be seen
-        <strong>seconds before touchdown.</strong>
-        <br><br>
-        📸 Excellent for close-up landing photographs.
+    Aircraft can be seen seconds before touchdown.
+    <br><br>
+    Excellent for close-up landing photographs.
     `
 );
 
@@ -205,16 +255,14 @@ addSpot(
 addSpot(
     42.56441239157695,
     18.253351872913807,
-    "2",
-    "#3399ff",
+    2,
     "🔵 LDDU Spot 2",
     `
-        Very good spotting position.
-        <br><br>
-        ✈️ You can see aircraft
-        <strong>all the time.</strong>
-        <br><br>
-        📸 Great all-around spotting location.
+    Very good spotting position.
+    <br><br>
+    You can see aircraft throughout the day.
+    <br><br>
+    Great all-around spotting location.
     `
 );
 
@@ -224,20 +272,16 @@ addSpot(
 addSpot(
     42.5573083097695,
     18.27213111634963,
-    "3",
-    "#ff9d00",
+    3,
     "🟠 LDDU Spot 3",
     `
-        Very good view of aircraft
-        on the taxiway and the entire
-        General Aviation apron.
-        <br><br>
-        ✈️ Aircraft vacating via
-        <strong>taxiway E</strong>
-        can be photographed very well.
-        <br><br>
-        📸 Excellent for taxiing
-        and vacating shots.
+    Very good view of aircraft on the taxiway
+    and the entire General Aviation apron.
+    <br><br>
+    Aircraft vacating via taxiway E can be
+    photographed very well.
+    <br><br>
+    Excellent for taxiing and vacating shots.
     `
 );
 
@@ -247,15 +291,12 @@ addSpot(
 addSpot(
     42.5544013524664,
     18.282621230913833,
-    "4",
-    "#ff4444",
-    "🔴 LDDU Spot 4 - HNK Konavljanin",
+    4,
+    "🔴 LDDU Spot 4",
     `
-        ⚽ HNK Konavljanin.
-        <br><br>
-        ✈️ Very good when
-        <strong>RWY 29</strong>
-        is in use.
+    HNK Konavljanin.
+    <br><br>
+    Very good when RWY 29 is in use.
     `
 );
 
@@ -265,19 +306,15 @@ addSpot(
 addSpot(
     42.588411734070775,
     18.246839539179884,
-    "5",
-    "#c04cff",
-    "🟣 LDDU Spot 5 - Hill",
+    5,
+    "🟣 LDDU Spot 5",
     `
-        Located on the hill overlooking
-        Dubrovnik Airport.
-        <br><br>
-        ✈️ Aircraft are further away,
-        but you can see the
-        <strong>whole airport.</strong>
-        <br><br>
-        🌆 You can also see
-        <strong>Dubrovnik Old Town.</strong>
+    Hill position overlooking Dubrovnik Airport.
+    <br><br>
+    Aircraft are further away, but you can see
+    the whole airport.
+    <br><br>
+    Dubrovnik Old Town can also be seen.
     `
 );
 
@@ -295,24 +332,14 @@ addAirport(
 
 // RUNWAY
 
-L.polyline(
+addRunway(
     [
         [42.569572, 18.247528],
         [42.555820, 18.282192]
     ],
-    {
-        color: "#ff3333",
-        weight: 5,
-        opacity: 0.8
-    }
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDDU RWY 11/29</h3>
-        <p>Dubrovnik Airport</p>
-    </div>
-`);
+    "LDDU RWY 11/29",
+    "Dubrovnik Airport"
+);
 
 
 // ============================================================
@@ -325,14 +352,12 @@ L.polyline(
 addSpot(
     43.546278,
     16.312611,
-    "1",
-    "#39d353",
+    1,
     "🟢 LDSP Spot 1",
     `
-        <strong>RWY 23 Arrival</strong>
-        <br><br>
-        Excellent position for aircraft
-        arriving on RWY 23.
+    RWY 23 arrival position.
+    <br><br>
+    Excellent for aircraft arriving on RWY 23.
     `
 );
 
@@ -342,14 +367,13 @@ addSpot(
 addSpot(
     43.546639,
     16.309306,
-    "2",
-    "#3399ff",
+    2,
     "🔵 LDSP Spot 2",
     `
-        <strong>RWY 23 End</strong>
-        <br><br>
-        Very good for aircraft movements
-        around the end of RWY 23.
+    RWY 23 end.
+    <br><br>
+    Very good for aircraft movements
+    around the end of RWY 23.
     `
 );
 
@@ -359,14 +383,13 @@ addSpot(
 addSpot(
     43.545583,
     16.307361,
-    "3",
-    "#ff9d00",
+    3,
     "🟠 LDSP Spot 3",
     `
-        <strong>RWY 23 Short Final / Touchdown</strong>
-        <br><br>
-        Excellent for touchdowns
-        and aircraft on short final.
+    RWY 23 short final / touchdown.
+    <br><br>
+    Excellent for touchdowns and
+    aircraft on short final.
     `
 );
 
@@ -376,14 +399,13 @@ addSpot(
 addSpot(
     43.534528,
     16.288333,
-    "4",
-    "#ff4444",
+    4,
     "🔴 LDSP Spot 4",
     `
-        <strong>RWY 05 Turning Area</strong>
-        <br><br>
-        Excellent position for aircraft
-        turning at RWY 05.
+    RWY 05 turning area.
+    <br><br>
+    Excellent position for aircraft
+    turning at RWY 05.
     `
 );
 
@@ -393,14 +415,13 @@ addSpot(
 addSpot(
     43.535056,
     16.292611,
-    "5",
-    "#c04cff",
+    5,
     "🟣 LDSP Spot 5",
     `
-        <strong>RWY 05 Line-up & Approach</strong>
-        <br><br>
-        Good for line-ups, approaches
-        and backtracking on RWY 05.
+    RWY 05 line-up and approach.
+    <br><br>
+    Good for line-ups, approaches
+    and backtracking.
     `
 );
 
@@ -410,14 +431,13 @@ addSpot(
 addSpot(
     43.535639,
     16.294722,
-    "6",
-    "#00bcd4",
+    6,
     "🔷 LDSP Spot 6",
     `
-        <strong>Observation Deck</strong>
-        <br><br>
-        Official observation area
-        inside the terminal.
+    Observation deck.
+    <br><br>
+    Official observation area inside
+    the terminal.
     `
 );
 
@@ -427,14 +447,13 @@ addSpot(
 addSpot(
     43.536139,
     16.297583,
-    "7",
-    "#9c27b0",
+    7,
     "🟣 LDSP Spot 7",
     `
-        <strong>Terminal / Observation Position</strong>
-        <br><br>
-        Position from the terminal area
-        with views of airport movements.
+    Terminal / observation position.
+    <br><br>
+    Views of airport movements
+    from the terminal area.
     `
 );
 
@@ -444,16 +463,15 @@ addSpot(
 addSpot(
     43.533722,
     16.274944,
-    "8",
-    "#ff69b4",
-    "🩷 LDSP Spot 8 - Mountain",
+    8,
+    "🩷 LDSP Spot 8",
     `
-        Elevated position west of the airport.
-        <br><br>
-        🛬 Good for RWY 05 arrivals
-        and backtracking.
-        <br><br>
-        🛫 Also good for RWY 23 departures.
+    Elevated position west of the airport.
+    <br><br>
+    Good for RWY 05 arrivals and
+    backtracking.
+    <br><br>
+    Also good for RWY 23 departures.
     `
 );
 
@@ -471,31 +489,18 @@ addAirport(
 
 // RUNWAY
 
-L.polyline(
+addRunway(
     [
         [43.531944, 16.285583],
         [43.545181, 16.309194]
     ],
-    {
-        color: "#ff3333",
-        weight: 5,
-        opacity: 0.8
-    }
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDSP RWY 05/23</h3>
-        <p>Split Airport</p>
-    </div>
-`);
+    "LDSP RWY 05/23",
+    "Split Airport"
+);
 
 
 // ============================================================
 // LDZD - ZADAR
-// ============================================================
-// Coordinates below are derived from the SpotterGuide map,
-// road descriptions and runway thresholds.
 // ============================================================
 
 
@@ -504,17 +509,13 @@ L.polyline(
 addSpot(
     44.1134,
     15.3669,
-    "1",
-    "#39d353",
+    1,
     "🟢 LDZD Spot 1 - Fence Front",
     `
-        <strong>13/31 movements</strong>
-        <br><br>
-        Best for RWY 31 arrivals and line-ups.
-        Also useful for RWY 13 arrivals
-        using the last exit.
-        <br><br>
-        📸 Good all-around Zadar position.
+    Good position for runway 13/31 movements.
+    <br><br>
+    Particularly useful for RWY 31 arrivals
+    and RWY 13 movements.
     `
 );
 
@@ -524,14 +525,13 @@ addSpot(
 addSpot(
     44.1085,
     15.3658,
-    "2",
-    "#3399ff",
+    2,
     "🔵 LDZD Spot 2 - Terminal Fence",
     `
-        <strong>Apron</strong>
-        <br><br>
-        Good view of parked aircraft
-        and apron movements.
+    View of the terminal and apron.
+    <br><br>
+    Good for parked aircraft and
+    apron movements.
     `
 );
 
@@ -541,14 +541,13 @@ addSpot(
 addSpot(
     44.0877,
     15.3690,
-    "3",
-    "#ff9d00",
+    3,
     "🟠 LDZD Spot 3 - 22 Threshold",
     `
-        <strong>RWY 04/22 movements</strong>
-        <br><br>
-        Good for line-ups onto RWY 22
-        and aircraft vacating after RWY 04 arrivals.
+    RWY 22 threshold area.
+    <br><br>
+    Good for RWY 22 line-ups and
+    aircraft vacating after RWY 04 arrivals.
     `
 );
 
@@ -558,14 +557,11 @@ addSpot(
 addSpot(
     44.0697,
     15.3698,
-    "4",
-    "#ff4444",
+    4,
     "🔴 LDZD Spot 4 - Gate P7",
     `
-        <strong>RWY 04 movements</strong>
-        <br><br>
-        Good for RWY 04 arrivals
-        and line-ups.
+    Good for RWY 04 arrivals
+    and line-ups.
     `
 );
 
@@ -575,16 +571,12 @@ addSpot(
 addSpot(
     44.0608,
     15.3575,
-    "5",
-    "#c04cff",
+    5,
     "🟣 LDZD Spot 5 - 04 Head",
     `
-        <strong>RWY 04 movements</strong>
-        <br><br>
-        Good for RWY 04 arrivals
-        and line-ups.
-        <br><br>
-        Excellent afternoon/sunset position.
+    RWY 04 head position.
+    <br><br>
+    Good for RWY 04 arrivals and line-ups.
     `
 );
 
@@ -594,14 +586,10 @@ addSpot(
 addSpot(
     44.0500,
     15.3508,
-    "6",
-    "#00bcd4",
+    6,
     "🔷 LDZD Spot 6 - Highway Turnoff",
     `
-        <strong>RWY 04 arrivals</strong>
-        <br><br>
-        Best for aircraft on the
-        RWY 04 arrival path.
+    Good position for RWY 04 arrivals.
     `
 );
 
@@ -619,46 +607,26 @@ addAirport(
 
 // RUNWAY 13/31
 
-L.polyline(
+addRunway(
     [
         [44.1163, 15.3357],
         [44.1003, 15.3573]
     ],
-    {
-        color: "#ff3333",
-        weight: 5,
-        opacity: 0.8
-    }
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDZD RWY 13/31</h3>
-        <p>Zadar Airport</p>
-    </div>
-`);
+    "LDZD RWY 13/31",
+    "Zadar Airport"
+);
 
 
 // RUNWAY 04/22
 
-L.polyline(
+addRunway(
     [
         [44.0793, 15.3412],
         [44.0938, 15.3577]
     ],
-    {
-        color: "#ff3333",
-        weight: 5,
-        opacity: 0.8
-    }
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDZD RWY 04/22</h3>
-        <p>Zadar Airport</p>
-    </div>
-`);
+    "LDZD RWY 04/22",
+    "Zadar Airport"
+);
 
 
 // ============================================================
@@ -669,16 +637,14 @@ L.polyline(
 // SPOT 1
 
 addSpot(
-    45.2165,
-    14.5705,
-    "1",
-    "#39d353",
-    "🟢 LDRI Spot 1 - Terminal Car Park",
+    45.2173,
+    14.5721,
+    1,
+    "🟢 LDRI Spot 1 - Terminal & Rental Car Apron View",
     `
-        <strong>Terminal / Apron</strong>
-        <br><br>
-        The car park outside the terminal
-        provides views of aircraft movements.
+    Best for capturing regional traffic and
+    airliners parked on the ramp or taxiing
+    toward the runway.
     `
 );
 
@@ -686,16 +652,45 @@ addSpot(
 // SPOT 2
 
 addSpot(
-    45.2200,
-    14.5550,
-    "2",
-    "#3399ff",
-    "🔵 LDRI Spot 2 - Far Side",
+    45.2265,
+    14.5595,
+    2,
+    "🔵 LDRI Spot 2 - RWY 14 Touchdown",
     `
-        <strong>Far side of the runway</strong>
-        <br><br>
-        Accessible from the road toward
-        Omišalj and useful for runway movements.
+    Perimeter fence north position.
+    <br><br>
+    Good for low-altitude landing shots
+    when aircraft approach from the
+    Kvarner Gulf over Omišalj.
+    `
+);
+
+
+// SPOT 3
+
+addSpot(
+    45.2058,
+    14.5815,
+    3,
+    "🟠 LDRI Spot 3 - RWY 32 Touchdown",
+    `
+    Good for capturing arrivals flying
+    low over Krk Island from the southeast.
+    `
+);
+
+
+// SPOT 4
+
+addSpot(
+    45.2155,
+    14.5685,
+    4,
+    "🔴 LDRI Spot 4 - General Aviation Apron",
+    `
+    Unobstructed views of private jets
+    and small leisure aircraft near the
+    old terminal layout.
     `
 );
 
@@ -703,8 +698,8 @@ addSpot(
 // AIRPORT
 
 addAirport(
-    45.2188,
-    14.5703,
+    45.2173,
+    14.5721,
     "Rijeka Airport",
     "LDRI / RJK",
     "14/32"
@@ -713,24 +708,14 @@ addAirport(
 
 // RUNWAY
 
-L.polyline(
+addRunway(
     [
-        [45.2257, 14.5615],
-        [45.2077, 14.5802]
+        [45.2257, 14.5614],
+        [45.2076, 14.5802]
     ],
-    {
-        color: "#ff3333",
-        weight: 5,
-        opacity: 0.8
-    }
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDRI RWY 14/32</h3>
-        <p>Rijeka Airport</p>
-    </div>
-`);
+    "LDRI RWY 14/32",
+    "Rijeka Airport"
+);
 
 
 // ============================================================
@@ -742,15 +727,14 @@ L.polyline(
 
 addSpot(
     44.8920,
-    13.9188,
-    "1",
-    "#39d353",
-    "🟢 LDPL Spot 1 - Rental Parking",
+    13.9372,
+    1,
+    "🟢 LDPL Spot 1 - RWY 27 Approach",
     `
-        <strong>09/27 movements + apron</strong>
-        <br><br>
-        Elevated position at the rental
-        car parking beside the terminal.
+    East perimeter fence.
+    <br><br>
+    Extremely close-up, low-altitude
+    arrival shots.
     `
 );
 
@@ -758,16 +742,15 @@ addSpot(
 // SPOT 2
 
 addSpot(
-    44.8930,
-    13.9218,
-    "2",
-    "#3399ff",
-    "🔵 LDPL Spot 2 - Observation Deck",
+    44.8913,
+    13.9015,
+    2,
+    "🔵 LDPL Spot 2 - RWY 09 Approach",
     `
-        <strong>09/27 movements + apron</strong>
-        <br><br>
-        Airside observation terrace
-        inside the terminal.
+    West perimeter fence / Stancija Peličeti.
+    <br><br>
+    Good for arriving aircraft flying
+    in from the west.
     `
 );
 
@@ -775,16 +758,15 @@ addSpot(
 // SPOT 3
 
 addSpot(
-    44.8931,
-    13.9222,
-    "3",
-    "#ff9d00",
-    "🟠 LDPL Spot 3 - Terminal Seating",
+    44.8943,
+    13.9212,
+    3,
+    "🟠 LDPL Spot 3 - Main Terminal Apron",
     `
-        <strong>09/27 movements + apron</strong>
-        <br><br>
-        Clean terminal windows with
-        views of aircraft movements.
+    Public parking area.
+    <br><br>
+    Good view of commercial aircraft
+    on the main ramp.
     `
 );
 
@@ -792,50 +774,16 @@ addSpot(
 // SPOT 4
 
 addSpot(
-    44.8920,
-    13.9000,
-    "4",
-    "#ff4444",
-    "🔴 LDPL Spot 4 - Kaznionica",
+    44.8955,
+    13.9110,
+    4,
+    "🔴 LDPL Spot 4 - GA & Military Apron",
     `
-        <strong>09 arrivals + 27 departures</strong>
-        <br><br>
-        Also useful for backtracks
-        and taxiing aircraft.
-    `
-);
-
-
-// SPOT 5
-
-addSpot(
-    44.8790,
-    13.9020,
-    "5",
-    "#c04cff",
-    "🟣 LDPL Spot 5 - Corn Field",
-    `
-        <strong>09 arrivals + 27 departures</strong>
-        <br><br>
-        Position near the southern edge
-        of the corn field.
-    `
-);
-
-
-// SPOT 6
-
-addSpot(
-    44.9040,
-    13.9480,
-    "6",
-    "#00bcd4",
-    "🔷 LDPL Spot 6 - Forest",
-    `
-        <strong>09 departures + 27 arrivals</strong>
-        <br><br>
-        Meadow/forest position east of
-        the airport.
+    Northern side of the airport.
+    <br><br>
+    Good for private traffic, charters
+    and occasional Croatian Air Force
+    operations.
     `
 );
 
@@ -843,8 +791,8 @@ addSpot(
 // AIRPORT
 
 addAirport(
-    44.8935,
-    13.9222,
+    44.8943,
+    13.9212,
     "Pula Airport",
     "LDPL / PUY",
     "09/27"
@@ -853,24 +801,14 @@ addAirport(
 
 // RUNWAY
 
-L.polyline(
+addRunway(
     [
-        [44.8932, 13.9035],
-        [44.8940, 13.9408]
+        [44.8914, 13.9048],
+        [44.8919, 13.9392]
     ],
-    {
-        color: "#ff3333",
-        weight: 5,
-        opacity: 0.8
-    }
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDPL RWY 09/27</h3>
-        <p>Pula Airport</p>
-    </div>
-`);
+    "LDPL RWY 09/27",
+    "Pula Airport"
+);
 
 
 // ============================================================
@@ -881,16 +819,16 @@ L.polyline(
 // SPOT 1
 
 addSpot(
-    45.7471,
-    16.0642,
-    "1",
-    "#39d353",
-    "🟢 LDZA Spot 1 - South / Runway Area",
+    45.7483,
+    16.0504,
+    1,
+    "🟢 LDZA Spot 1 - RWY 22 Approach",
     `
-        <strong>Excellent runway position</strong>
-        <br><br>
-        One of the known Zagreb spotting
-        areas alongside the runway.
+    North / Mičevec fence.
+    <br><br>
+    Popular position for low-altitude
+    landing shots when aircraft arrive
+    from the northeast.
     `
 );
 
@@ -898,16 +836,14 @@ addSpot(
 // SPOT 2
 
 addSpot(
-    45.7536,
-    16.0871,
-    "2",
-    "#3399ff",
-    "🔵 LDZA Spot 2 - North",
+    45.7231,
+    16.0754,
+    2,
+    "🔵 LDZA Spot 2 - RWY 04 Approach",
     `
-        <strong>Northern spotting area</strong>
-        <br><br>
-        Good for aircraft movements
-        around the northern side of the airport.
+    Southwest / Pleso village fields.
+    <br><br>
+    Good for arrivals from the southwest.
     `
 );
 
@@ -915,16 +851,31 @@ addSpot(
 // SPOT 3
 
 addSpot(
-    45.7260,
-    16.0464,
-    "3",
-    "#ff9d00",
-    "🟠 LDZA Spot 3 - South Zone",
+    45.7410,
+    16.0612,
+    3,
+    "🟠 LDZA Spot 3 - Old Terminal & Cargo Apron",
     `
-        <strong>Southern spotting area</strong>
-        <br><br>
-        Useful for aircraft and
-        military movements.
+    North side.
+    <br><br>
+    Good for cargo flights, general aviation
+    and maintenance traffic.
+    `
+);
+
+
+// SPOT 4
+
+addSpot(
+    45.7335,
+    16.0601,
+    4,
+    "🔴 LDZA Spot 4 - New Terminal Parking Garage",
+    `
+    Upper deck.
+    <br><br>
+    High-angle views of aircraft at the
+    modern jet bridges and taxiing aircraft.
     `
 );
 
@@ -936,30 +887,83 @@ addAirport(
     16.0680,
     "Zagreb Franjo Tuđman Airport",
     "LDZA / ZAG",
-    "05/23"
+    "04/22"
 );
 
 
 // RUNWAY
 
-L.polyline(
+addRunway(
     [
-        [45.7318, 16.0520],
-        [45.7518, 16.0825]
+        [45.7275, 16.0538],
+        [45.7455, 16.0792]
     ],
-    {
-        color: "#ff3333",
-        weight: 5,
-        opacity: 0.8
-    }
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDZA RWY 05/23</h3>
-        <p>Zagreb Airport</p>
-    </div>
-`);
+    "LDZA RWY 04/22",
+    "Zagreb Franjo Tuđman Airport"
+);
+
+
+// ============================================================
+// LDZA PHOTOGRAPHY NOTICE
+// ============================================================
+
+const zagrebNotice = L.control({
+    position: "topright"
+});
+
+zagrebNotice.onAdd = function () {
+
+    const div = L.DomUtil.create(
+        "div",
+        "map-legend"
+    );
+
+    div.innerHTML = `
+        <div style="
+            max-width: 320px;
+            font-size: 13px;
+            line-height: 1.5;
+        ">
+
+            <strong>⚠️ LDZA Photography Rules</strong>
+
+            <br><br>
+
+            Private photography with your own device
+            is permitted in public areas of Zagreb Airport.
+
+            <br><br>
+
+            <strong>
+                Photography is strictly prohibited
+                in operational/restricted areas
+            </strong>,
+            including runways, taxiways and aircraft stands.
+
+            <br><br>
+
+            Commercial photography requires
+            prior airport approval and is subject
+            to special conditions and fees.
+
+            <br><br>
+
+            <a
+                href="https://www.zagreb-airport.hr/en/business/b2b/permission-to-film-photograph/132"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color:#5da9ff;"
+            >
+                Official Zagreb Airport photography rules
+            </a>
+
+        </div>
+    `;
+
+    return div;
+};
+
+zagrebNotice.addTo(map);
 
 
 // ============================================================
@@ -970,17 +974,15 @@ L.polyline(
 // SPOT 1
 
 addSpot(
-    45.4628,
-    18.8102,
-    "1",
-    "#39d353",
-    "🟢 LDOS Spot 1 - Terminal Area",
+    45.4668,
+    18.8021,
+    1,
+    "🟢 LDOS Spot 1 - RWY 11 Approach",
     `
-        <strong>Apron + runway</strong>
-        <br><br>
-        Good views of aircraft parked
-        in front of the terminal and
-        runway movements.
+    West perimeter fence / Road 5114.
+    <br><br>
+    Good for low-altitude arrival shots
+    when aircraft approach from the west.
     `
 );
 
@@ -988,16 +990,15 @@ addSpot(
 // SPOT 2
 
 addSpot(
-    45.4470,
-    18.7950,
-    "2",
-    "#3399ff",
-    "🔵 LDOS Spot 2 - RWY 11 Approach",
+    45.4578,
+    18.8315,
+    2,
+    "🔵 LDOS Spot 2 - RWY 29 Approach",
     `
-        <strong>RWY 11 approach</strong>
-        <br><br>
-        Southern-side position for
-        aircraft on final to RWY 11.
+    East perimeter fence / Klisa side.
+    <br><br>
+    Good for aircraft arriving
+    from the southeast.
     `
 );
 
@@ -1005,16 +1006,15 @@ addSpot(
 // SPOT 3
 
 addSpot(
-    45.4775,
-    18.8250,
-    "3",
-    "#ff9d00",
-    "🟠 LDOS Spot 3 - RWY 29 Approach",
+    45.4628,
+    18.8105,
+    3,
+    "🟠 LDOS Spot 3 - Terminal Apron View",
     `
-        <strong>RWY 29 approach</strong>
-        <br><br>
-        Good for RWY 29 arrivals
-        and touchdown photography.
+    Public parking area.
+    <br><br>
+    Good for scheduled commercial traffic
+    and regional turboprops on the main ramp.
     `
 );
 
@@ -1022,8 +1022,8 @@ addSpot(
 // AIRPORT
 
 addAirport(
-    45.4627,
-    18.8102,
+    45.4628,
+    18.8105,
     "Osijek Airport",
     "LDOS / OSI",
     "11/29"
@@ -1032,28 +1032,18 @@ addAirport(
 
 // RUNWAY
 
-L.polyline(
+addRunway(
     [
-        [45.4560, 18.7960],
-        [45.4690, 18.8240]
+        [45.4651, 18.8078],
+        [45.4594, 18.8258]
     ],
-    {
-        color: "#ff3333",
-        weight: 5,
-        opacity: 0.8
-    }
-)
-.addTo(map)
-.bindPopup(`
-    <div class="popup">
-        <h3>🛫 LDOS RWY 11/29</h3>
-        <p>Osijek Airport</p>
-    </div>
-`);
+    "LDOS RWY 11/29",
+    "Osijek Airport"
+);
 
 
 // ============================================================
-// LEGEND
+// MAP LEGEND
 // ============================================================
 
 const legend = L.control({
@@ -1069,70 +1059,87 @@ legend.onAdd = function () {
 
     div.innerHTML = `
 
-        <h4>🇭🇷 Croatia Planespotting</h4>
+        <div class="legend-title">
+            🇭🇷 Croatia Planespotting
+        </div>
 
-        <strong>LDDU - Dubrovnik</strong>
-        <div>🟢 Spot 1</div>
-        <div>🔵 Spot 2</div>
-        <div>🟠 Spot 3</div>
-        <div>🔴 Spot 4</div>
-        <div>🟣 Spot 5</div>
+        <div class="legend-airport">
+            LDDU — Dubrovnik
+        </div>
 
-        <br>
+        <div class="legend-item">🟢 Spot 1</div>
+        <div class="legend-item">🔵 Spot 2</div>
+        <div class="legend-item">🟠 Spot 3</div>
+        <div class="legend-item">🔴 Spot 4</div>
+        <div class="legend-item">🟣 Spot 5</div>
 
-        <strong>LDSP - Split</strong>
-        <div>🟢 Spot 1</div>
-        <div>🔵 Spot 2</div>
-        <div>🟠 Spot 3</div>
-        <div>🔴 Spot 4</div>
-        <div>🟣 Spot 5</div>
-        <div>🔷 Spot 6</div>
-        <div>🟣 Spot 7</div>
-        <div>🩷 Spot 8</div>
 
-        <br>
+        <div class="legend-airport">
+            LDSP — Split
+        </div>
 
-        <strong>LDZD - Zadar</strong>
-        <div>🟢 Spot 1</div>
-        <div>🔵 Spot 2</div>
-        <div>🟠 Spot 3</div>
-        <div>🔴 Spot 4</div>
-        <div>🟣 Spot 5</div>
-        <div>🔷 Spot 6</div>
+        <div class="legend-item">🟢 Spot 1</div>
+        <div class="legend-item">🔵 Spot 2</div>
+        <div class="legend-item">🟠 Spot 3</div>
+        <div class="legend-item">🔴 Spot 4</div>
+        <div class="legend-item">🟣 Spot 5</div>
+        <div class="legend-item">🔷 Spot 6</div>
+        <div class="legend-item">🟣 Spot 7</div>
+        <div class="legend-item">🩷 Spot 8</div>
 
-        <br>
 
-        <strong>LDRI - Rijeka</strong>
-        <div>🟢 Spot 1</div>
-        <div>🔵 Spot 2</div>
+        <div class="legend-airport">
+            LDZD — Zadar
+        </div>
 
-        <br>
+        <div class="legend-item">🟢 Spot 1</div>
+        <div class="legend-item">🔵 Spot 2</div>
+        <div class="legend-item">🟠 Spot 3</div>
+        <div class="legend-item">🔴 Spot 4</div>
+        <div class="legend-item">🟣 Spot 5</div>
+        <div class="legend-item">🔷 Spot 6</div>
 
-        <strong>LDPL - Pula</strong>
-        <div>🟢 Spot 1</div>
-        <div>🔵 Spot 2</div>
-        <div>🟠 Spot 3</div>
-        <div>🔴 Spot 4</div>
-        <div>🟣 Spot 5</div>
-        <div>🔷 Spot 6</div>
 
-        <br>
+        <div class="legend-airport">
+            LDRI — Rijeka
+        </div>
 
-        <strong>LDZA - Zagreb</strong>
-        <div>🟢 Spot 1</div>
-        <div>🔵 Spot 2</div>
-        <div>🟠 Spot 3</div>
+        <div class="legend-item">🟢 Spot 1</div>
+        <div class="legend-item">🔵 Spot 2</div>
+        <div class="legend-item">🟠 Spot 3</div>
+        <div class="legend-item">🔴 Spot 4</div>
 
-        <br>
 
-        <strong>LDOS - Osijek</strong>
-        <div>🟢 Spot 1</div>
-        <div>🔵 Spot 2</div>
-        <div>🟠 Spot 3</div>
+        <div class="legend-airport">
+            LDPL — Pula
+        </div>
 
-        <br>
+        <div class="legend-item">🟢 Spot 1</div>
+        <div class="legend-item">🔵 Spot 2</div>
+        <div class="legend-item">🟠 Spot 3</div>
+        <div class="legend-item">🔴 Spot 4</div>
 
-        <div style="color:#ff3333">
+
+        <div class="legend-airport">
+            LDZA — Zagreb
+        </div>
+
+        <div class="legend-item">🟢 Spot 1</div>
+        <div class="legend-item">🔵 Spot 2</div>
+        <div class="legend-item">🟠 Spot 3</div>
+        <div class="legend-item">🔴 Spot 4</div>
+
+
+        <div class="legend-airport">
+            LDOS — Osijek
+        </div>
+
+        <div class="legend-item">🟢 Spot 1</div>
+        <div class="legend-item">🔵 Spot 2</div>
+        <div class="legend-item">🟠 Spot 3</div>
+
+
+        <div class="legend-runway">
             ━ Runway
         </div>
 
@@ -1145,9 +1152,11 @@ legend.addTo(map);
 
 
 // ============================================================
-// MAP SIZE FIX
+// FIX MAP SIZE
 // ============================================================
 
 setTimeout(function () {
+
     map.invalidateSize();
+
 }, 500);
