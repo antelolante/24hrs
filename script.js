@@ -1,6 +1,6 @@
 // ==========================================
 // CROATIA PLANESPOTTING
-// LDDU + LDSP + LDZD
+// LDDU + LDSP
 // ==========================================
 
 
@@ -31,12 +31,7 @@ L.tileLayer(
 // SPOTTING MARKER FUNCTION
 // ==========================================
 
-function createSpotMarker(
-    lat,
-    lng,
-    number,
-    color
-) {
+function createSpotMarker(lat, lng, number, color) {
 
     const icon = L.divIcon({
 
@@ -112,9 +107,7 @@ function createAirportIcon() {
 // ============================================================
 
 
-// ==========================================
-// LDDU SPOT 1
-// ==========================================
+// SPOT 1
 
 createSpotMarker(
     42.57024915946364,
@@ -125,11 +118,10 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟢 LDDU Spot 1</h3>
 
         <p>
-            ✈️ Aircraft can be seen
+            Aircraft can be seen
             <strong>seconds before touchdown.</strong>
         </p>
 
@@ -138,17 +130,13 @@ createSpotMarker(
         </p>
 
         <p>
-            📸 Excellent for close-up
-            landing photographs.
+            📸 Excellent for close-up landing photographs.
         </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDDU SPOT 2
-// ==========================================
+// SPOT 2
 
 createSpotMarker(
     42.56441239157695,
@@ -159,11 +147,10 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🔵 LDDU Spot 2</h3>
 
         <p>
-            ⭐ Very good spotting position.
+            Very good spotting position.
         </p>
 
         <p>
@@ -174,19 +161,11 @@ createSpotMarker(
         <p>
             📍 42.564412, 18.253352
         </p>
-
-        <p>
-            📸 Great all-around
-            spotting location.
-        </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDDU SPOT 3
-// ==========================================
+// SPOT 3
 
 createSpotMarker(
     42.5573083097695,
@@ -197,13 +176,12 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟠 LDDU Spot 3</h3>
 
         <p>
-            🧱 From the wall you can see
-            aircraft on the taxiway and
-            the entire General Aviation apron.
+            From the wall you can see aircraft
+            on the taxiway and the entire
+            General Aviation apron.
         </p>
 
         <p>
@@ -215,19 +193,11 @@ createSpotMarker(
         <p>
             📍 42.557308, 18.272131
         </p>
-
-        <p>
-            📸 Excellent for taxiing
-            and vacating shots.
-        </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDDU SPOT 4
-// ==========================================
+// SPOT 4
 
 createSpotMarker(
     42.5544013524664,
@@ -238,7 +208,6 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🔴 LDDU Spot 4 - HNK Konavljanin</h3>
 
         <p>
@@ -254,14 +223,11 @@ createSpotMarker(
         <p>
             📍 42.554401, 18.282621
         </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDDU SPOT 5
-// ==========================================
+// SPOT 5
 
 createSpotMarker(
     42.588411734070775,
@@ -272,12 +238,11 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟣 LDDU Spot 5 - Hill</h3>
 
         <p>
-            🏔️ Located on the hill
-            overlooking Dubrovnik Airport.
+            Located on the hill overlooking
+            Dubrovnik Airport.
         </p>
 
         <p>
@@ -294,14 +259,11 @@ createSpotMarker(
         <p>
             📍 42.588412, 18.246840
         </p>
-
     </div>
 `);
 
 
-// ==========================================
 // LDDU AIRPORT
-// ==========================================
 
 L.marker(
     [42.5624, 18.2660],
@@ -312,7 +274,6 @@ L.marker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>✈️ Dubrovnik Airport</h3>
 
         <p>
@@ -323,41 +284,32 @@ L.marker(
             Runway:
             <strong>11/29</strong>
         </p>
-
     </div>
 `);
 
 
-// ==========================================
 // LDDU RUNWAY
-// ==========================================
 
 const ldduRunway = L.polyline(
-
     [
         [42.569572, 18.247528],
         [42.555820, 18.282192]
     ],
-
     {
         color: "#ff3333",
         weight: 6,
         opacity: 0.8
     }
-
 ).addTo(map);
-
 
 ldduRunway.bindPopup(`
     <div class="popup">
-
         <h3>🛫 LDDU Runway 11/29</h3>
 
         <p>
             Length:
             <strong>3,230 m</strong>
         </p>
-
     </div>
 `);
 
@@ -367,9 +319,7 @@ ldduRunway.bindPopup(`
 // ============================================================
 
 
-// ==========================================
-// LDSP SPOT 1
-// ==========================================
+// SPOT 1
 
 createSpotMarker(
     43.546278,
@@ -380,7 +330,6 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟢 LDSP Spot 1</h3>
 
         <p>
@@ -399,14 +348,11 @@ createSpotMarker(
         <p>
             📍 43.546278, 16.312611
         </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 2
-// ==========================================
+// SPOT 2
 
 createSpotMarker(
     43.546639,
@@ -417,7 +363,6 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🔵 LDSP Spot 2</h3>
 
         <p>
@@ -436,14 +381,11 @@ createSpotMarker(
         <p>
             📍 43.546639, 16.309306
         </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 3
-// ==========================================
+// SPOT 3
 
 createSpotMarker(
     43.545583,
@@ -454,7 +396,6 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟠 LDSP Spot 3</h3>
 
         <p>
@@ -473,14 +414,11 @@ createSpotMarker(
         <p>
             📍 43.545583, 16.307361
         </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 4
-// ==========================================
+// SPOT 4
 
 createSpotMarker(
     43.534528,
@@ -491,7 +429,6 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🔴 LDSP Spot 4</h3>
 
         <p>
@@ -510,14 +447,11 @@ createSpotMarker(
         <p>
             📍 43.534528, 16.288333
         </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 5
-// ==========================================
+// SPOT 5
 
 createSpotMarker(
     43.535056,
@@ -528,7 +462,6 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟣 LDSP Spot 5</h3>
 
         <p>
@@ -547,14 +480,11 @@ createSpotMarker(
         <p>
             📍 43.535056, 16.292611
         </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 6
-// ==========================================
+// SPOT 6
 
 createSpotMarker(
     43.535639,
@@ -565,7 +495,6 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🔷 LDSP Spot 6</h3>
 
         <p>
@@ -585,14 +514,11 @@ createSpotMarker(
         <p>
             📍 43.535639, 16.294722
         </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 7
-// ==========================================
+// SPOT 7
 
 createSpotMarker(
     43.536139,
@@ -603,7 +529,6 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🟣 LDSP Spot 7</h3>
 
         <p>
@@ -618,14 +543,11 @@ createSpotMarker(
         <p>
             📍 43.536139, 16.297583
         </p>
-
     </div>
 `);
 
 
-// ==========================================
-// LDSP SPOT 8
-// ==========================================
+// SPOT 8
 
 createSpotMarker(
     43.533722,
@@ -636,7 +558,6 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🩷 LDSP Spot 8 - Mountain</h3>
 
         <p>
@@ -663,14 +584,11 @@ createSpotMarker(
         <p>
             📍 43.533722, 16.274944
         </p>
-
     </div>
 `);
 
 
-// ==========================================
 // LDSP AIRPORT
-// ==========================================
 
 L.marker(
     [43.5389, 16.2980],
@@ -681,15 +599,10 @@ L.marker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>✈️ Split Airport</h3>
 
         <p>
             <strong>LDSP / SPU</strong>
-        </p>
-
-        <p>
-            Split Airport
         </p>
 
         <p>
@@ -701,30 +614,29 @@ L.marker(
             Length:
             <strong>2,550 m</strong>
         </p>
-
     </div>
 `);
 
 
-// ==========================================
 // LDSP RUNWAY
-// ==========================================
 
 const LDSP_RUNWAY = [
     [43.531944, 16.285583],
     [43.545181, 16.309194]
 ];
 
-L.polyline(LDSP_RUNWAY, {
-    color: "#ff3333",
-    weight: 4,
-    opacity: 0.75,
-    lineCap: "round"
-})
+L.polyline(
+    LDSP_RUNWAY,
+    {
+        color: "#ff3333",
+        weight: 4,
+        opacity: 0.75,
+        lineCap: "round"
+    }
+)
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-
         <h3>🛫 LDSP RWY 05/23</h3>
 
         <p>
@@ -738,13 +650,12 @@ L.polyline(LDSP_RUNWAY, {
         <p>
             Heading: 052° / 232°
         </p>
-
     </div>
 `);
 
 
 // ==========================================
-// LEGEND
+// MAP LEGEND
 // ==========================================
 
 const legend = L.control({
@@ -759,69 +670,34 @@ legend.onAdd = function () {
     );
 
     div.innerHTML = `
-
         <h4>🇭🇷 Croatia Planespotting</h4>
 
         <strong>LDDU - Dubrovnik</strong>
 
-        <div style="color:#39d353">
-            🟢 Spot 1
-        </div>
-
-        <div style="color:#3399ff">
-            🔵 Spot 2
-        </div>
-
-        <div style="color:#ff9d00">
-            🟠 Spot 3
-        </div>
-
-        <div style="color:#ff4444">
-            🔴 Spot 4
-        </div>
-
-        <div style="color:#c04cff">
-            🟣 Spot 5
-        </div>
+        <div style="color:#39d353">🟢 Spot 1</div>
+        <div style="color:#3399ff">🔵 Spot 2</div>
+        <div style="color:#ff9d00">🟠 Spot 3</div>
+        <div style="color:#ff4444">🔴 Spot 4</div>
+        <div style="color:#c04cff">🟣 Spot 5</div>
 
         <br>
 
         <strong>LDSP - Split</strong>
 
-        <div style="color:#39d353">
-            🟢 Spot 1
-        </div>
-
-        <div style="color:#3399ff">
-            🔵 Spot 2
-        </div>
-
-        <div style="color:#ff9d00">
-            🟠 Spot 3
-        </div>
-
-        <div style="color:#ff4444">
-            🔴 Spot 4
-        </div>
-
-        <div style="color:#c04cff">
-            🟣 Spot 5
-        </div>
-
-        <div style="color:#00bcd4">
-            🔷 Spot 6
-        </div>
-
-        <div style="color:#9c27b0">
-            🟣 Spot 7
-        </div>
+        <div style="color:#39d353">🟢 Spot 1</div>
+        <div style="color:#3399ff">🔵 Spot 2</div>
+        <div style="color:#ff9d00">🟠 Spot 3</div>
+        <div style="color:#ff4444">🔴 Spot 4</div>
+        <div style="color:#c04cff">🟣 Spot 5</div>
+        <div style="color:#00bcd4">🔷 Spot 6</div>
+        <div style="color:#9c27b0">🟣 Spot 7</div>
+        <div style="color:#ff69b4">🩷 Spot 8</div>
 
         <br>
 
         <div style="color:#ff3333">
             🛫 Runway
         </div>
-
     `;
 
     return div;
@@ -829,9 +705,9 @@ legend.onAdd = function () {
 
 legend.addTo(map);
 
-   
+
 // ==========================================
-// FORCE LEAFLET TO RECALCULATE MAP SIZE
+// MAP SIZE FIX
 // ==========================================
 
 setTimeout(function () {
