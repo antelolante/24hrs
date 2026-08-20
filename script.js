@@ -1,22 +1,22 @@
-// ==========================================
+// ============================================================
 // CROATIA PLANESPOTTING
-// LDDU + LDSP
-// ==========================================
+// LDDU + LDSP + LDZD + LDRI + LDPL + LDZA + LDOS
+// ============================================================
 
 
-// ==========================================
-// CREATE MAP
-// ==========================================
+// ============================================================
+// MAP
+// ============================================================
 
 const map = L.map("map").setView(
-    [43.0, 17.5],
+    [44.2, 16.0],
     7
 );
 
 
-// ==========================================
+// ============================================================
 // OPENSTREETMAP
-// ==========================================
+// ============================================================
 
 L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -27,9 +27,9 @@ L.tileLayer(
 ).addTo(map);
 
 
-// ==========================================
-// SPOTTING MARKER FUNCTION
-// ==========================================
+// ============================================================
+// SPOTTING MARKER
+// ============================================================
 
 function createSpotMarker(lat, lng, number, color) {
 
@@ -68,9 +68,9 @@ function createSpotMarker(lat, lng, number, color) {
 }
 
 
-// ==========================================
+// ============================================================
 // AIRPORT ICON
-// ==========================================
+// ============================================================
 
 function createAirportIcon() {
 
@@ -107,7 +107,9 @@ function createAirportIcon() {
 // ============================================================
 
 
-// SPOT 1
+// -------------------------
+// LDDU SPOT 1
+// -------------------------
 
 createSpotMarker(
     42.57024915946364,
@@ -118,6 +120,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟢 LDDU Spot 1</h3>
 
         <p>
@@ -132,11 +135,14 @@ createSpotMarker(
         <p>
             📸 Excellent for close-up landing photographs.
         </p>
+
     </div>
 `);
 
 
-// SPOT 2
+// -------------------------
+// LDDU SPOT 2
+// -------------------------
 
 createSpotMarker(
     42.56441239157695,
@@ -147,6 +153,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🔵 LDDU Spot 2</h3>
 
         <p>
@@ -161,11 +168,14 @@ createSpotMarker(
         <p>
             📍 42.564412, 18.253352
         </p>
+
     </div>
 `);
 
 
-// SPOT 3
+// -------------------------
+// LDDU SPOT 3
+// -------------------------
 
 createSpotMarker(
     42.5573083097695,
@@ -176,10 +186,11 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟠 LDDU Spot 3</h3>
 
         <p>
-            From the wall you can see aircraft
+            Very good view of aircraft
             on the taxiway and the entire
             General Aviation apron.
         </p>
@@ -193,11 +204,19 @@ createSpotMarker(
         <p>
             📍 42.557308, 18.272131
         </p>
+
+        <p>
+            📸 Excellent for taxiing
+            and vacating shots.
+        </p>
+
     </div>
 `);
 
 
-// SPOT 4
+// -------------------------
+// LDDU SPOT 4
+// -------------------------
 
 createSpotMarker(
     42.5544013524664,
@@ -208,6 +227,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🔴 LDDU Spot 4 - HNK Konavljanin</h3>
 
         <p>
@@ -223,11 +243,14 @@ createSpotMarker(
         <p>
             📍 42.554401, 18.282621
         </p>
+
     </div>
 `);
 
 
-// SPOT 5
+// -------------------------
+// LDDU SPOT 5
+// -------------------------
 
 createSpotMarker(
     42.588411734070775,
@@ -238,6 +261,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟣 LDDU Spot 5 - Hill</h3>
 
         <p>
@@ -259,11 +283,14 @@ createSpotMarker(
         <p>
             📍 42.588412, 18.246840
         </p>
+
     </div>
 `);
 
 
+// -------------------------
 // LDDU AIRPORT
+// -------------------------
 
 L.marker(
     [42.5624, 18.2660],
@@ -274,6 +301,7 @@ L.marker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>✈️ Dubrovnik Airport</h3>
 
         <p>
@@ -284,32 +312,38 @@ L.marker(
             Runway:
             <strong>11/29</strong>
         </p>
+
     </div>
 `);
 
 
+// -------------------------
 // LDDU RUNWAY
+// -------------------------
 
-const ldduRunway = L.polyline(
-    [
-        [42.569572, 18.247528],
-        [42.555820, 18.282192]
-    ],
+const LDDU_RUNWAY = [
+    [42.569572, 18.247528],
+    [42.555820, 18.282192]
+];
+
+L.polyline(
+    LDDU_RUNWAY,
     {
         color: "#ff3333",
         weight: 6,
         opacity: 0.8
     }
-).addTo(map);
-
-ldduRunway.bindPopup(`
+)
+.addTo(map)
+.bindPopup(`
     <div class="popup">
+
         <h3>🛫 LDDU Runway 11/29</h3>
 
         <p>
-            Length:
-            <strong>3,230 m</strong>
+            Dubrovnik Airport
         </p>
+
     </div>
 `);
 
@@ -330,6 +364,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟢 LDSP Spot 1</h3>
 
         <p>
@@ -342,12 +377,9 @@ createSpotMarker(
         </p>
 
         <p>
-            🌅 Best light: sunrise – 13:00
-        </p>
-
-        <p>
             📍 43.546278, 16.312611
         </p>
+
     </div>
 `);
 
@@ -363,6 +395,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🔵 LDSP Spot 2</h3>
 
         <p>
@@ -375,12 +408,9 @@ createSpotMarker(
         </p>
 
         <p>
-            🌅 Best light: afternoon – sunset
-        </p>
-
-        <p>
             📍 43.546639, 16.309306
         </p>
+
     </div>
 `);
 
@@ -396,6 +426,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟠 LDSP Spot 3</h3>
 
         <p>
@@ -408,12 +439,9 @@ createSpotMarker(
         </p>
 
         <p>
-            🌅 Best light: 14:30 – sunset
-        </p>
-
-        <p>
             📍 43.545583, 16.307361
         </p>
+
     </div>
 `);
 
@@ -429,6 +457,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🔴 LDSP Spot 4</h3>
 
         <p>
@@ -441,12 +470,9 @@ createSpotMarker(
         </p>
 
         <p>
-            🌅 Best light: 15:00 – sunset
-        </p>
-
-        <p>
             📍 43.534528, 16.288333
         </p>
+
     </div>
 `);
 
@@ -462,6 +488,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟣 LDSP Spot 5</h3>
 
         <p>
@@ -474,12 +501,9 @@ createSpotMarker(
         </p>
 
         <p>
-            🌅 Best light: sunrise – 13:00
-        </p>
-
-        <p>
             📍 43.535056, 16.292611
         </p>
+
     </div>
 `);
 
@@ -495,6 +519,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🔷 LDSP Spot 6</h3>
 
         <p>
@@ -502,18 +527,14 @@ createSpotMarker(
         </p>
 
         <p>
-            Official observation area inside
-            the terminal.
-        </p>
-
-        <p>
-            ✈️ Excellent for seeing aircraft
-            movements around the airport.
+            Official observation area
+            inside the terminal.
         </p>
 
         <p>
             📍 43.535639, 16.294722
         </p>
+
     </div>
 `);
 
@@ -529,6 +550,7 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🟣 LDSP Spot 7</h3>
 
         <p>
@@ -543,6 +565,7 @@ createSpotMarker(
         <p>
             📍 43.536139, 16.297583
         </p>
+
     </div>
 `);
 
@@ -558,11 +581,8 @@ createSpotMarker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
-        <h3>🩷 LDSP Spot 8 - Mountain</h3>
 
-        <p>
-            <strong>Mountain Spot</strong>
-        </p>
+        <h3>🩷 LDSP Spot 8 - Mountain</h3>
 
         <p>
             Elevated position west of the airport.
@@ -578,12 +598,9 @@ createSpotMarker(
         </p>
 
         <p>
-            🌅 Best light: 15:00 – sunset
-        </p>
-
-        <p>
             📍 43.533722, 16.274944
         </p>
+
     </div>
 `);
 
@@ -599,6 +616,7 @@ L.marker(
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>✈️ Split Airport</h3>
 
         <p>
@@ -610,10 +628,6 @@ L.marker(
             <strong>05/23</strong>
         </p>
 
-        <p>
-            Length:
-            <strong>2,550 m</strong>
-        </p>
     </div>
 `);
 
@@ -629,34 +643,366 @@ L.polyline(
     LDSP_RUNWAY,
     {
         color: "#ff3333",
-        weight: 4,
-        opacity: 0.75,
+        weight: 5,
+        opacity: 0.8,
         lineCap: "round"
     }
 )
 .addTo(map)
 .bindPopup(`
     <div class="popup">
+
         <h3>🛫 LDSP RWY 05/23</h3>
 
         <p>
-            <strong>Split Airport</strong>
+            Split Airport
         </p>
 
-        <p>
-            Length: 2,550 m
-        </p>
-
-        <p>
-            Heading: 052° / 232°
-        </p>
     </div>
 `);
 
 
-// ==========================================
-// MAP LEGEND
-// ==========================================
+// ============================================================
+// LDZD - ZADAR
+// ============================================================
+
+
+// AIRPORT
+
+L.marker(
+    [44.108, 15.347],
+    {
+        icon: createAirportIcon()
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>✈️ Zadar Airport</h3>
+
+        <p>
+            <strong>LDZD / ZAD</strong>
+        </p>
+
+        <p>
+            Runways:
+            <strong>04/22 and 13/31</strong>
+        </p>
+
+        <p>
+            Zadar Zemunik Airport has two runways.
+        </p>
+
+    </div>
+`);
+
+
+// LDZD RWY 13/31
+
+const LDZD_RUNWAY_13_31 = [
+    [44.116333, 15.335667],
+    [44.100333, 15.357333]
+];
+
+L.polyline(
+    LDZD_RUNWAY_13_31,
+    {
+        color: "#ff3333",
+        weight: 5,
+        opacity: 0.8
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>🛫 LDZD RWY 13/31</h3>
+
+        <p>
+            Length: 2,500 m
+        </p>
+
+    </div>
+`);
+
+
+// LDZD RWY 04/22
+
+const LDZD_RUNWAY_04_22 = [
+    [44.079333, 15.341167],
+    [44.093833, 15.357667]
+];
+
+L.polyline(
+    LDZD_RUNWAY_04_22,
+    {
+        color: "#ff3333",
+        weight: 5,
+        opacity: 0.8
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>🛫 LDZD RWY 04/22</h3>
+
+        <p>
+            Length: 2,000 m
+        </p>
+
+    </div>
+`);
+
+
+// ============================================================
+// LDRI - RIJEKA
+// ============================================================
+
+
+// AIRPORT
+
+L.marker(
+    [45.217, 14.570],
+    {
+        icon: createAirportIcon()
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>✈️ Rijeka Airport</h3>
+
+        <p>
+            <strong>LDRI / RJK</strong>
+        </p>
+
+        <p>
+            Runway:
+            <strong>14/32</strong>
+        </p>
+
+    </div>
+`);
+
+
+// RUNWAY
+
+const LDRI_RUNWAY = [
+    [45.225667, 14.561500],
+    [45.207667, 14.580167]
+];
+
+L.polyline(
+    LDRI_RUNWAY,
+    {
+        color: "#ff3333",
+        weight: 5,
+        opacity: 0.8
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>🛫 LDRI RWY 14/32</h3>
+
+        <p>
+            Length: 2,500 m
+        </p>
+
+    </div>
+`);
+
+
+// ============================================================
+// LDPL - PULA
+// ============================================================
+
+
+// AIRPORT
+
+L.marker(
+    [44.8935, 13.9222],
+    {
+        icon: createAirportIcon()
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>✈️ Pula Airport</h3>
+
+        <p>
+            <strong>LDPL / PUY</strong>
+        </p>
+
+        <p>
+            Runway:
+            <strong>09/27</strong>
+        </p>
+
+    </div>
+`);
+
+
+// RUNWAY
+
+const LDPL_RUNWAY = [
+    [44.893167, 13.903500],
+    [44.894000, 13.940833]
+];
+
+L.polyline(
+    LDPL_RUNWAY,
+    {
+        color: "#ff3333",
+        weight: 5,
+        opacity: 0.8
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>🛫 LDPL RWY 09/27</h3>
+
+        <p>
+            Length: 2,946 m
+        </p>
+
+    </div>
+`);
+
+
+// ============================================================
+// LDZA - ZAGREB
+// ============================================================
+
+
+// AIRPORT
+
+L.marker(
+    [45.743, 16.069],
+    {
+        icon: createAirportIcon()
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>✈️ Zagreb Airport</h3>
+
+        <p>
+            <strong>LDZA / ZAG</strong>
+        </p>
+
+        <p>
+            Runway:
+            <strong>04/22</strong>
+        </p>
+
+    </div>
+`);
+
+
+// RUNWAY
+
+const LDZA_RUNWAY = [
+    [45.731833, 16.052000],
+    [45.751833, 16.082500]
+];
+
+L.polyline(
+    LDZA_RUNWAY,
+    {
+        color: "#ff3333",
+        weight: 5,
+        opacity: 0.8
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>🛫 LDZA RWY 04/22</h3>
+
+        <p>
+            Length: 3,252 m
+        </p>
+
+    </div>
+`);
+
+
+// ============================================================
+// LDOS - OSIJEK
+// ============================================================
+
+
+// AIRPORT
+
+L.marker(
+    [45.462667, 18.810167],
+    {
+        icon: createAirportIcon()
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>✈️ Osijek Airport</h3>
+
+        <p>
+            <strong>LDOS / OSI</strong>
+        </p>
+
+        <p>
+            Runway:
+            <strong>11/29</strong>
+        </p>
+
+    </div>
+`);
+
+
+// RUNWAY
+
+const LDOS_RUNWAY = [
+    [45.466333, 18.796333],
+    [45.458333, 18.826333]
+];
+
+L.polyline(
+    LDOS_RUNWAY,
+    {
+        color: "#ff3333",
+        weight: 5,
+        opacity: 0.8
+    }
+)
+.addTo(map)
+.bindPopup(`
+    <div class="popup">
+
+        <h3>🛫 LDOS RWY 11/29</h3>
+
+        <p>
+            Length: 2,500 m
+        </p>
+
+    </div>
+`);
+
+
+// ============================================================
+// LEGEND
+// ============================================================
 
 const legend = L.control({
     position: "bottomright"
@@ -670,6 +1016,7 @@ legend.onAdd = function () {
     );
 
     div.innerHTML = `
+
         <h4>🇭🇷 Croatia Planespotting</h4>
 
         <strong>LDDU - Dubrovnik</strong>
@@ -695,9 +1042,11 @@ legend.onAdd = function () {
 
         <br>
 
-        <div style="color:#ff3333">
-            🛫 Runway
-        </div>
+        <strong>Airports</strong>
+
+        <div>✈️ Airport</div>
+        <div style="color:#ff3333">━ Runway</div>
+
     `;
 
     return div;
@@ -706,9 +1055,9 @@ legend.onAdd = function () {
 legend.addTo(map);
 
 
-// ==========================================
+// ============================================================
 // MAP SIZE FIX
-// ==========================================
+// ============================================================
 
 setTimeout(function () {
     map.invalidateSize();
