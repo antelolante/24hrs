@@ -1,5 +1,7 @@
+```html
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -10,503 +12,454 @@
 
     <title>Croatia Planespotting</title>
 
-    <!-- =========================================================
-         LEAFLET CSS
-         ========================================================= -->
-
+    <!-- Leaflet CSS -->
     <link
         rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIINfQ3D0h7R8hJm3J8V4v1gJQ9Y7mJkK8="
-        crossorigin=""
     >
 
-    <!-- =========================================================
-         YOUR CSS
-         ========================================================= -->
-
-    <link rel="stylesheet" href="style.css">
-
+    <!-- Your website CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
+
 
 <body>
 
-    <!-- =========================================================
+    <!-- =====================================================
          HEADER
-         ========================================================= -->
+         ===================================================== -->
 
     <header class="site-header">
 
-        <h1>✈️ Croatia Planespotting</h1>
+        <h1>
+            ✈️ Croatia Planespotting
+        </h1>
 
         <p>
-            LDDU / DBV • Dubrovnik Ruđer Bošković Airport
+            Croatian airports • spotting locations • runway information
         </p>
 
     </header>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          MAP
-         ========================================================= -->
+         ===================================================== -->
 
     <div id="map"></div>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          SPOTTING INFORMATION
-         ========================================================= -->
+         ===================================================== -->
 
     <main class="spotting-info">
 
-        <h2>📍 Planespotting mjesta</h2>
+        <h2>
+            📍 Planespotting mjesta
+        </h2>
 
 
-        <!-- =====================================================
-             LDDU
-             ===================================================== -->
+        <!-- LDDU -->
 
-        <h3>✈️ Dubrovnik Airport — LDDU</h3>
+        <section>
 
-        <div class="spot-card">
+            <h3>
+                ✈️ Dubrovnik Airport — LDDU
+            </h3>
 
-            <h4>🟢 Spot 1 — RWY 11 Approach</h4>
+            <div class="spot-card">
+                <h4>🟢 Spot 1 — RWY 11 Approach</h4>
 
-            <p>
-                Aircraft can be seen seconds before touchdown
-                on RWY 11. Excellent position for close approach
-                photographs.
-            </p>
+                <p>
+                    Aircraft can be seen seconds before touchdown
+                    on RWY 11. Excellent position for close approach
+                    photographs.
+                </p>
+            </div>
 
-        </div>
+            <div class="spot-card">
+                <h4>🔵 Spot 2</h4>
 
-        <div class="spot-card">
+                <p>
+                    Very good all-around spotting position with
+                    views of arriving and departing aircraft.
+                </p>
+            </div>
 
-            <h4>🔵 Spot 2 — Airport Area</h4>
+            <div class="spot-card">
+                <h4>🟠 Spot 3 — Taxiway / General Aviation Apron</h4>
 
-            <p>
-                Very good all-around spotting position with
-                views of aircraft operating around Dubrovnik Airport.
-            </p>
+                <p>
+                    Very good view of aircraft on the taxiway and
+                    the General Aviation apron.
+                </p>
+            </div>
 
-        </div>
+            <div class="spot-card">
+                <h4>🔴 Spot 4 — HNK Konavljanin</h4>
 
-        <div class="spot-card">
+                <p>
+                    Particularly useful when RWY 29 is in use.
+                </p>
+            </div>
 
-            <h4>🟠 Spot 3 — Taxiway / General Aviation Apron</h4>
+            <div class="spot-card">
+                <h4>🟣 Spot 5 — Hill Position</h4>
 
-            <p>
-                Very good view of aircraft on the taxiway and
-                the General Aviation apron. Excellent for taxiing
-                and vacating shots.
-            </p>
+                <p>
+                    Elevated position overlooking Dubrovnik Airport
+                    and the surrounding area.
+                </p>
+            </div>
 
-        </div>
+        </section>
 
-        <div class="spot-card">
 
-            <h4>🔴 Spot 4 — HNK Konavljanin</h4>
+        <!-- LDSP -->
 
-            <p>
-                Very good position when RWY 29 is in use.
-            </p>
+        <section>
 
-        </div>
+            <h3>
+                ✈️ Split Airport — LDSP
+            </h3>
 
-        <div class="spot-card">
+            <div class="spot-card">
+                <h4>🟢 Spot 1 — RWY 23 Arrival</h4>
 
-            <h4>🟣 Spot 5 — Hill Position</h4>
+                <p>
+                    Excellent for aircraft arriving on RWY 23.
+                </p>
+            </div>
 
-            <p>
-                Hill position overlooking Dubrovnik Airport,
-                providing a wide view of the airport and surrounding area.
-            </p>
+            <div class="spot-card">
+                <h4>🔵 Spot 2 — RWY 23 End</h4>
 
-        </div>
+                <p>
+                    Very good for aircraft movements around the
+                    end of RWY 23.
+                </p>
+            </div>
 
+            <div class="spot-card">
+                <h4>🟠 Spot 3 — RWY 23 Touchdown</h4>
 
-        <!-- =====================================================
-             LDSP
-             ===================================================== -->
+                <p>
+                    Excellent position for touchdown photographs.
+                </p>
+            </div>
 
-        <h3>✈️ Split Airport — LDSP</h3>
+            <div class="spot-card">
+                <h4>🔴 Spot 4 — RWY 05</h4>
 
-        <div class="spot-card">
+                <p>
+                    Useful for RWY 05 movements.
+                </p>
+            </div>
 
-            <h4>🟢 Spot 1 — RWY 23 Arrival</h4>
+            <div class="spot-card">
+                <h4>🟣 Spot 5 — RWY 05 Line-up</h4>
 
-            <p>
-                Excellent for aircraft arriving on RWY 23.
-            </p>
+                <p>
+                    Good view of aircraft lining up for RWY 05.
+                </p>
+            </div>
 
-        </div>
+            <div class="spot-card">
+                <h4>🔷 Spot 6 — Observation Position</h4>
 
-        <div class="spot-card">
+                <p>
+                    Observation position with views toward the
+                    airport movement area.
+                </p>
+            </div>
 
-            <h4>🔵 Spot 2 — RWY 23 End</h4>
+            <div class="spot-card">
+                <h4>🩷 Spot 7 — Terminal</h4>
 
-            <p>
-                Very good for aircraft movements around
-                the end of RWY 23.
-            </p>
+                <p>
+                    Terminal-side observation position.
+                </p>
+            </div>
 
-        </div>
+            <div class="spot-card">
+                <h4>🟡 Spot 8 — Elevated Position</h4>
 
-        <div class="spot-card">
+                <p>
+                    Elevated position west of the airport.
+                    Good for RWY 05 arrivals and RWY 23 departures.
+                </p>
+            </div>
 
-            <h4>🟠 Spot 3 — RWY 23 Short Final / Touchdown</h4>
+        </section>
 
-            <p>
-                Excellent position for touchdown photographs.
-            </p>
 
-        </div>
+        <!-- LDZD -->
 
-        <div class="spot-card">
+        <section>
 
-            <h4>🔴 Spot 4 — RWY 05 Turning Area</h4>
+            <h3>
+                ✈️ Zadar Airport — LDZD
+            </h3>
 
-            <p>
-                Useful for aircraft operating around the RWY 05
-                turning area.
-            </p>
+            <div class="spot-card">
+                <h4>🟢 Spot 1 — Fence Front</h4>
 
-        </div>
+                <p>
+                    Good position for RWY 31 arrivals and
+                    aircraft lining up for departure.
+                </p>
+            </div>
 
-        <div class="spot-card">
+            <div class="spot-card">
+                <h4>🔵 Spot 2 — Terminal Fence</h4>
 
-            <h4>🟣 Spot 5 — RWY 05 Line-up / Approach</h4>
+                <p>
+                    Apron position useful for parked aircraft
+                    and apron movements.
+                </p>
+            </div>
 
-            <p>
-                Good position for RWY 05 line-ups and approaching aircraft.
-            </p>
+            <div class="spot-card">
+                <h4>🟠 Spot 3 — RWY 22 Area</h4>
 
-        </div>
+                <p>
+                    Useful for movements around the RWY 22 end.
+                </p>
+            </div>
 
-        <div class="spot-card">
+            <div class="spot-card">
+                <h4>🔴 Spot 4 — RWY 04 Area</h4>
 
-            <h4>🔷 Spot 6 — Observation Deck</h4>
+                <p>
+                    Useful for RWY 04 arrivals and departures.
+                </p>
+            </div>
 
-            <p>
-                Observation position with views toward airport operations.
-            </p>
+            <div class="spot-card">
+                <h4>🟣 Spot 5 — RWY 04 Head</h4>
 
-        </div>
+                <p>
+                    Position near the RWY 04 end.
+                </p>
+            </div>
 
-        <div class="spot-card">
+            <div class="spot-card">
+                <h4>🔷 Spot 6 — Southern Position</h4>
 
-            <h4>🩷 Spot 7 — Terminal / Observation Position</h4>
+                <p>
+                    Useful for aircraft approaching the southern
+                    end of the airport.
+                </p>
+            </div>
 
-            <p>
-                Useful position around the terminal and observation area.
-            </p>
+        </section>
 
-        </div>
 
-        <div class="spot-card">
+        <!-- LDRI -->
 
-            <h4>🟡 Spot 8 — Elevated Position</h4>
+        <section>
 
-            <p>
-                Elevated position west of the airport.
-                Good for RWY 05 arrivals and RWY 23 departures.
-            </p>
+            <h3>
+                ✈️ Rijeka Airport — LDRI
+            </h3>
 
-        </div>
+            <div class="spot-card">
+                <h4>🟢 Spot 1 — Terminal & Rental Car Apron</h4>
 
+                <p>
+                    Good for regional traffic and airliners parked
+                    on the ramp or taxiing toward the runway.
+                </p>
+            </div>
 
-        <!-- =====================================================
-             LDZD
-             ===================================================== -->
+            <div class="spot-card">
+                <h4>🔵 Spot 2 — RWY 14 Touchdown</h4>
 
-        <h3>✈️ Zadar Airport — LDZD</h3>
+                <p>
+                    North perimeter position for low-altitude
+                    RWY 14 landing shots.
+                </p>
+            </div>
 
-        <div class="spot-card">
+            <div class="spot-card">
+                <h4>🟠 Spot 3 — RWY 32 Touchdown</h4>
 
-            <h4>🟢 Spot 1 — Fence Front</h4>
+                <p>
+                    South touchdown area, useful for arrivals
+                    from the southeast.
+                </p>
+            </div>
 
-            <p>
-                Position for 13/31 movements.
-                Best for RWY 31 arrivals and line-ups.
-            </p>
+            <div class="spot-card">
+                <h4>🔴 Spot 4 — General Aviation Apron</h4>
 
-        </div>
+                <p>
+                    Good view of private jets and small aircraft.
+                </p>
+            </div>
 
-        <div class="spot-card">
+        </section>
 
-            <h4>🔵 Spot 2 — Terminal Fence</h4>
 
-            <p>
-                Apron position suitable for parked aircraft
-                and apron movements.
-            </p>
+        <!-- LDPL -->
 
-        </div>
+        <section>
 
-        <div class="spot-card">
+            <h3>
+                ✈️ Pula Airport — LDPL
+            </h3>
 
-            <h4>🟠 Spot 3 — RWY 22 Threshold</h4>
+            <div class="spot-card">
+                <h4>🟢 Spot 1 — Western Approach</h4>
 
-            <p>
-                Good for RWY 04/22 movements,
-                including line-ups and aircraft vacating the runway.
-            </p>
+                <p>
+                    Position for aircraft approaching the western
+                    side of the airport.
+                </p>
+            </div>
 
-        </div>
+            <div class="spot-card">
+                <h4>🔵 Spot 2 — Western Field</h4>
 
-        <div class="spot-card">
+                <p>
+                    Useful position near the western approach area.
+                </p>
+            </div>
 
-            <h4>🔴 Spot 4 — Gate P7</h4>
+            <div class="spot-card">
+                <h4>🟠 Spot 3 — Eastern Approach</h4>
 
-            <p>
-                Useful for RWY 04 arrivals and line-ups.
-            </p>
+                <p>
+                    Position on the eastern side of the airport,
+                    useful for approach photography.
+                </p>
+            </div>
 
-        </div>
+            <div class="spot-card">
+                <h4>🔴 Spot 4 — Terminal</h4>
 
-        <div class="spot-card">
+                <p>
+                    Terminal position with views toward the apron
+                    and aircraft movements.
+                </p>
+            </div>
 
-            <h4>🟣 Spot 5 — RWY 04 Head</h4>
+        </section>
 
-            <p>
-                Good for RWY 04 arrivals and line-ups.
-            </p>
 
-        </div>
+        <!-- LDZA -->
 
-        <div class="spot-card">
+        <section>
 
-            <h4>🔷 Spot 6 — Highway Turnoff</h4>
+            <h3>
+                ✈️ Zagreb Franjo Tuđman Airport — LDZA
+            </h3>
 
-            <p>
-                Position primarily useful for RWY 04 arrivals.
-            </p>
+            <div class="spot-card">
+                <h4>🟢 Spot 1 — Runway / Taxiway View</h4>
 
-        </div>
+                <p>
+                    Public roadside position with views toward
+                    the runway and taxiway.
+                </p>
+            </div>
 
+            <div class="spot-card">
+                <h4>🔵 Spot 2 — RWY 23 Approach</h4>
 
-        <!-- =====================================================
-             LDRI
-             ===================================================== -->
+                <p>
+                    Northern approach area useful for aircraft
+                    approaching RWY 23.
+                </p>
+            </div>
 
-        <h3>✈️ Rijeka Airport — LDRI</h3>
+            <div class="spot-card">
+                <h4>🟠 Spot 3 — Terminal / Cargo Area</h4>
 
-        <div class="spot-card">
+                <p>
+                    Views toward terminal, apron and cargo traffic.
+                </p>
+            </div>
 
-            <h4>🟢 Spot 1 — Terminal & Rental Car Apron View</h4>
+            <div class="spot-card">
 
-            <p>
-                Good for regional traffic and airliners parked
-                on the ramp or taxiing toward the runway.
-            </p>
+                <h4>
+                    ⚠️ Photography notice
+                </h4>
 
-        </div>
+                <p>
+                    Stay in public areas and never enter restricted
+                    airport operational areas, runways, taxiways or
+                    aircraft stands. Follow airport staff instructions
+                    and current airport rules.
+                </p>
 
-        <div class="spot-card">
+            </div>
 
-            <h4>🔵 Spot 2 — RWY 14 Touchdown</h4>
+        </section>
 
-            <p>
-                North perimeter position for low-altitude
-                RWY 14 landing shots.
-            </p>
 
-        </div>
+        <!-- LDOS -->
 
-        <div class="spot-card">
+        <section>
 
-            <h4>🟠 Spot 3 — RWY 32 Touchdown</h4>
+            <h3>
+                ✈️ Osijek Airport — LDOS
+            </h3>
 
-            <p>
-                South touchdown position for arrivals from
-                the southeast.
-            </p>
+            <div class="spot-card">
+                <h4>🟢 Spot 1 — Terminal Area</h4>
 
-        </div>
+                <p>
+                    Public terminal area with views of the apron
+                    and runway.
+                </p>
+            </div>
 
-        <div class="spot-card">
+            <div class="spot-card">
+                <h4>🔵 Spot 2 — RWY 11 Approach</h4>
 
-            <h4>🔴 Spot 4 — General Aviation Apron</h4>
+                <p>
+                    Western approach position useful for
+                    low-altitude RWY 11 arrivals.
+                </p>
+            </div>
 
-            <p>
-                Good position for private jets and small aircraft.
-            </p>
+            <div class="spot-card">
+                <h4>🟠 Spot 3 — RWY 29 Approach</h4>
 
-        </div>
+                <p>
+                    Eastern approach position useful for
+                    RWY 29 arrivals and touchdown photographs.
+                </p>
+            </div>
 
-
-        <!-- =====================================================
-             LDPL
-             ===================================================== -->
-
-        <h3>✈️ Pula Airport — LDPL</h3>
-
-        <div class="spot-card">
-
-            <h4>🟢 Spot 1 — RWY 09 Approach</h4>
-
-            <p>
-                Position at
-                44.89304463331475, 13.898132213396597.
-                Good for aircraft approaching RWY 09.
-            </p>
-
-        </div>
-
-        <div class="spot-card">
-
-            <h4>🔵 Spot 2 — RWY 09 / Approach Area</h4>
-
-            <p>
-                Position at
-                44.88770260819165, 13.898164921331809.
-                Useful for aircraft operating around the western
-                side of the airport.
-            </p>
-
-        </div>
-
-        <div class="spot-card">
-
-            <h4>🟠 Spot 3 — RWY 27 Approach</h4>
-
-            <p>
-                Position at
-                44.89067421705795, 13.949351446173514.
-                Good for RWY 27 arrivals and approach photography.
-            </p>
-
-        </div>
-
-        <div class="spot-card">
-
-            <h4>🔴 Spot 4 — Terminal</h4>
-
-            <p>
-                Position at
-                44.898544048604855, 13.92339056553631.
-                Terminal-side spotting position with views
-                toward the apron and aircraft movements.
-            </p>
-
-        </div>
-
-
-        <!-- =====================================================
-             LDZA
-             ===================================================== -->
-
-        <h3>✈️ Zagreb Franjo Tuđman Airport — LDZA</h3>
-
-        <div class="spot-card">
-
-            <h4>🟢 Spot 1 — Runway / Taxiway View</h4>
-
-            <p>
-                Public roadside spotting position beside the airport.
-                Good views of aircraft operating around the runway
-                and taxiway.
-            </p>
-
-        </div>
-
-        <div class="spot-card">
-
-            <h4>🔵 Spot 2 — RWY 23 Approach</h4>
-
-            <p>
-                Northern approach area with views toward aircraft
-                approaching RWY 23.
-            </p>
-
-        </div>
-
-        <div class="spot-card">
-
-            <h4>🟠 Spot 3 — Terminal / Cargo Area</h4>
-
-            <p>
-                Position with views toward the terminal, apron,
-                cargo and maintenance traffic.
-            </p>
-
-        </div>
-
-        <div class="spot-card">
-
-            <h4>⚠️ Photography information</h4>
-
-            <p>
-                Photography must be carried out only from areas
-                where photography is permitted. Do not enter
-                restricted airport operational areas, runways,
-                taxiways or aircraft stands.
-                Follow all instructions given by airport personnel
-                and current airport rules.
-            </p>
-
-        </div>
-
-
-        <!-- =====================================================
-             LDOS
-             ===================================================== -->
-
-        <h3>✈️ Osijek Airport — LDOS</h3>
-
-        <div class="spot-card">
-
-            <h4>🟢 Spot 1 — Terminal Area</h4>
-
-            <p>
-                Terminal-side position with views of the apron
-                and runway.
-            </p>
-
-        </div>
-
-        <div class="spot-card">
-
-            <h4>🔵 Spot 2 — RWY 11 Approach</h4>
-
-            <p>
-                Approach position suitable for RWY 11 arrivals
-                and low-altitude photography.
-            </p>
-
-        </div>
-
-        <div class="spot-card">
-
-            <h4>🟠 Spot 3 — RWY 29 Approach</h4>
-
-            <p>
-                Approach position suitable for RWY 29 arrivals
-                and touchdown photography.
-            </p>
-
-        </div>
+        </section>
 
     </main>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          LEAFLET JAVASCRIPT
-         IMPORTANT: MUST LOAD BEFORE script.js
-         ========================================================= -->
+         ===================================================== -->
 
     <script
         src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin=""
     ></script>
 
 
-    <!-- =========================================================
-         YOUR JAVASCRIPT
-         ========================================================= -->
+    <!-- =====================================================
+         YOUR MAP JAVASCRIPT
+         ===================================================== -->
 
     <script src="script.js"></script>
 
+
 </body>
+
 </html>
+```
